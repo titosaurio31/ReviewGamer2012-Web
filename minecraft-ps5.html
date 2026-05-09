@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft PS5 Edition | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#playstation">Consolas PlayStation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main" style="background: #fff;">
+            <img src="assets/minecraft-box.png" alt="Minecraft PS5 Edition - Portada" style="object-fit: contain;">
+          </div>
+          <div class="gallery-thumbs">
+            <div style="background: #fff; cursor: pointer;"><img src="assets/minecraft-box.png" alt="Portada" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/minecraft-1.png" alt="Gameplay Castillo" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/minecraft-box.png" alt="Key Art" style="object-fit: contain;"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="tag" style="background: #0070d1;">PlayStation 5</div>
+          <h2>Minecraft PS5 Edition</h2>
+          <p class="price-row"><span class="old">$39.99</span><span class="new" style="font-size: 1.8rem;">$29.99</span></p>
+          <p style="font-size: 1.1rem; color: var(--text);">Explora mundos infinitos y construye desde la casa más sencilla hasta el castillo más grandioso. En Minecraft para PS5, disfruta de mundos más grandes, mejores distancias de dibujado y una experiencia optimizada para la nueva generación.</p>
+          
+          <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <li>Juega en modo creativo con recursos ilimitados.</li>
+            <li>Extrae materiales en las profundidades del mundo en el modo supervivencia.</li>
+            <li>Multijugador multiplataforma para jugar con amigos en otras consolas o PC.</li>
+            <li>Optimizado para PlayStation 5 con tiempos de carga rápidos.</li>
+            <li>Incluye las últimas actualizaciones del juego.</li>
+          </ul>
+          
+          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: #00d9ff;">Opiniones de la Comunidad</h3>
+            <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (12,500 valoraciones)</p>
+            
+            <div style="border-left: 3px solid #0070d1; padding-left: 1rem; margin-bottom: 1rem;">
+              <p class="kb-comment"><em>"Lo compré para mis hijos y terminamos jugando todos. Es increíble lo que puedes crear. En PS5 vuela."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Roberto L. ✅ Compra verificada</p>
+            </div>
+            
+            <div style="border-left: 3px solid #00d9ff; padding-left: 1rem;">
+              <p class="kb-comment"><em>"Un clásico atemporal. Si te gusta la creatividad, este es tu juego. Imprescindible en cualquier colección."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Elena G. ✅ Compra verificada</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full" style="background: #0070d1; border-color: #0070d1; font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem;">Comprar ahora</button>
+          
+          <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
+            <span>🚚 Entrega Digital/Física</span>
+            <span>🔒 Pago Seguro</span>
+            <span>⭐ +3500 DropPoints</span>
+          </div>
+
+          <p style="text-align: center;"><a class="btn btn-ghost" href="index.html#playstation">Volver a PlayStation</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container footer-wrap">
+      <p>© 2026 DropGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const thumbs = document.querySelectorAll('.gallery-thumbs img');
+    const mainImg = document.querySelector('.gallery-main img');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        mainImg.src = this.src;
+      });
+    });
+  </script>
+</body>
+</html>

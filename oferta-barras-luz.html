@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡OFERTA 50% OFF! Barras de Luz RGB | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .urgency-banner {
+      background: #ff3366;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="urgency-banner">🔥 50% OFF SOLO HOY - ¡Stock Limitado! 🚚 Envío Gratis</div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#ofertas">Ver Ofertas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img src="assets/rgb-3.png" alt="Barras de Luz RGB">
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="tag" style="background: #ff3366; color: #fff; border:none; font-weight:bold; display:inline-block; margin-bottom:1rem;">🔥 OFERTA RELÁMPAGO</div>
+          <h2>Barras de Luz RGB Streamer</h2>
+          <p class="price-row"><span class="old">$69.99</span><span class="new" style="font-size: 2rem; color: #ff3366;">$34.99</span></p>
+          <p>Nivel más premium para tu setup. Se colocan detrás o al lado del monitor y proporcionan un ambiente inmersivo de categoría streamer profesional.</p>
+          
+          <div style="background: rgba(255, 51, 102, 0.1); border: 1px solid #ff3366; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+            <p style="margin:0; font-weight:bold; color: #ff3366;">⏳ La oferta termina pronto: <span id="timer">04:59:59</span></p>
+          </div>
+
+          <ul class="benefits-list">
+            <li>Iluminación indirecta para reducir la fatiga visual</li>
+            <li>Estética de alto nivel para directos en Twitch/YouTube</li>
+            <li>Colores vivos con sincronización inteligente</li>
+          </ul>
+          
+          <p class="kb-rating">Reseña: ⭐ 4.9 (415 valoraciones)</p>
+          <p class="kb-comment">Comentario destacado: “Me encanta cómo iluminan la pared detrás del monitor, la luz es muy suave y se ve ultra premium. Valen cada centavo.”</p>
+          
+          <button class="btn full" style="background: linear-gradient(90deg, #ff3366, #ff7b00); color: white; font-size: 1.2rem; padding: 1rem; border-radius: 12px; margin-top: 1rem;">¡COMPRAR AHORA CON 50% OFF!</button>
+          
+          <div class="trust-row" style="justify-content: center; margin-top: 1.5rem;">
+            <span>🚚 Envío gratis</span>
+            <span>🔒 Pago seguro</span>
+            <span>⏱️ Envío en 24h</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script>
+    let time = 4 * 3600 + 59 * 60 + 59;
+    setInterval(() => {
+      time--;
+      let h = Math.floor(time / 3600);
+      let m = Math.floor((time % 3600) / 60);
+      let s = time % 60;
+      document.getElementById('timer').innerText = `0${h}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
+    }, 1000);
+  </script>
+</body>
+</html>

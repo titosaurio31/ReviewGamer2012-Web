@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo Switch | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#nintendo">Consolas Nintendo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main" style="background: #fff;">
+            <img src="assets/switch-1.jpg" alt="Nintendo Switch vista principal" style="object-fit: contain;">
+          </div>
+          <div class="gallery-thumbs">
+            <div style="background: #fff; cursor: pointer;"><img src="assets/switch-1.jpg" alt="Nintendo Switch en dock" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/switch-2.jpg" alt="Nintendo Switch con Joy-Con" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/switch-3.jpg" alt="Caja de Nintendo Switch" style="object-fit: contain;"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <h2>Nintendo Switch (Neón)</h2>
+          <p class="price-row"><span class="old">$349.99</span><span class="new" style="font-size: 1.8rem;">$299.99</span></p>
+          <p style="font-size: 1.1rem; color: var(--text);">La consola híbrida que se adapta a tu estilo de vida. Juega en la TV de tu casa o llévala contigo en modo portátil para no detener la diversión.</p>
+          
+          <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <li>Juega en 3 modos: TV, Sobremesa y Portátil.</li>
+            <li>Controles Joy-Con versátiles para multijugador al instante.</li>
+            <li>Pantalla táctil capacitiva de 6.2 pulgadas (1280x720).</li>
+            <li>Incluye Dock, cable HDMI y adaptador de corriente.</li>
+          </ul>
+          
+          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-2);">Reseñas Destacadas</h3>
+            <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (1,452 valoraciones)</p>
+            
+            <div style="border-left: 3px solid var(--primary); padding-left: 1rem; margin-bottom: 1rem;">
+              <p class="kb-comment"><em>"Excelente consola, muy versátil y los juegos exclusivos son una maravilla. El envío fue súper rápido."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Alejandro T. ✅ Compra verificada</p>
+            </div>
+            
+            <div style="border-left: 3px solid #ff3366; padding-left: 1rem;">
+              <p class="kb-comment"><em>"La compré para jugar con mi familia y es perfecta. Mario Kart y Smash Bros no pueden faltar."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Sofía G. ✅ Compra verificada</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full" style="font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem;">Añadir al carrito</button>
+          
+          <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
+            <span>🚚 Envío Rápido</span>
+            <span>🔒 Pago Seguro</span>
+            <span>⭐ Garantía 12 meses</span>
+          </div>
+
+          <p style="text-align: center;"><a class="btn btn-ghost" href="index.html#nintendo">Volver a Nintendo</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container footer-wrap">
+      <p>© 2026 DropGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script para cambiar las imágenes de la galería al hacer clic
+    const thumbs = document.querySelectorAll('.gallery-thumbs img');
+    const mainImg = document.querySelector('.gallery-main img');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        mainImg.src = this.src;
+      });
+    });
+  </script>
+</body>
+</html>

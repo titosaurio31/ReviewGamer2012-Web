@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halo: Reach | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --halo-blue: #00f2ff;
+      --halo-glow: rgba(0, 242, 255, 0.3);
+      --xbox-green: #107c10;
+    }
+    .product-gallery .gallery-main {
+        background: #0a0c10 !important;
+        border: 1px solid rgba(0, 242, 255, 0.2) !important;
+    }
+    .gallery-thumbs div {
+        background: #0a0c10 !important;
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .gallery-thumbs div.active {
+        border-color: var(--halo-blue) !important;
+        box-shadow: 0 0 10px var(--halo-glow);
+    }
+    .badge-bungie {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#xbox">Consolas Xbox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main" style="border-radius: 12px; overflow: hidden; padding: 1rem;">
+            <img src="assets/halo-reach-3.png" alt="Halo Reach Box Art" id="main-product-img" style="object-fit: contain; width: 100%; height: auto;">
+          </div>
+          <div class="gallery-thumbs">
+            <div class="active" onclick="changeImage('assets/halo-reach-3.png', this)"><img src="assets/halo-reach-3.png" alt="Box Art"></div>
+            <div onclick="changeImage('assets/halo-reach-2.png', this)"><img src="assets/halo-reach-2.png" alt="Noble Team"></div>
+            <div onclick="changeImage('assets/halo-reach-1.png', this)"><img src="assets/halo-reach-1.png" alt="Weapon Detail"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="badge-bungie">Original Bungie Saga</div>
+          <h2 style="color: var(--halo-blue); font-size: 2.5rem; margin-bottom: 0.5rem;">Halo: Reach</h2>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Xbox 360 / Xbox Series X|S (Compatible)</p>
+
+          <p class="price-row">
+            <span class="old">$29.99</span>
+            <span class="new" style="font-size: 2.2rem; color: #fff;">$19.99</span>
+          </p>
+          
+          <p style="font-size: 1.1rem; color: var(--text); line-height: 1.6;">
+            Vive la caída del planeta Reach en la entrega más emocional y épica de la saga Halo. Controla a Noble Six y únete al legendario equipo Noble en una batalla desesperada contra el Covenant.
+          </p>
+          
+          <ul class="benefits-list" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+            <li><strong>Campaña Épica:</strong> Una historia inolvidable que precede a los eventos de Halo: CE.</li>
+            <li><strong>Personalización:</strong> Crea tu propio Spartan y úsalo en todos los modos de juego.</li>
+            <li><strong>Multijugador:</strong> Mapas clásicos y el revolucionario modo Firefight.</li>
+            <li><strong>Optimizado:</strong> Juega con mejoras gráficas en consolas de nueva generación.</li>
+          </ul>
+          
+          <div style="background: var(--card); border: 1px solid rgba(0, 242, 255, 0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--halo-blue);">Reseñas de la Comunidad</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 5.0 de 5 (15,420 valoraciones)</p>
+            
+            <div id="reviews-list">
+              <div style="border-left: 3px solid var(--halo-blue); padding-left: 1rem; margin-bottom: 1rem;">
+                <p class="kb-comment"><em>"La mejor campaña de toda la franquicia. El final me dejó sin palabras. Un juego que todo fan de Xbox debe tener."</em></p>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Alejandro V. ✅ Compra verificada</p>
+              </div>
+              
+              <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem;">
+                <p class="kb-comment"><em>"Noble Team es inolvidable. El sistema de armaduras y la progresión son perfectos. 10/10."</em></p>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Sofía L. ✅ Compra verificada</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full" style="font-size: 1.2rem; padding: 1.2rem; margin-bottom: 1rem; background: linear-gradient(90deg, #00d2ff, #3a7bd5); border: none; box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);">
+            Añadir al carrito
+          </button>
+          
+          <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
+            <span>🚚 Entrega Digital</span>
+            <span>🔒 Transacción Encriptada</span>
+            <span>🎮 Xbox Play Anywhere</span>
+          </div>
+
+          <p style="text-align: center;"><a class="btn btn-ghost" href="index.html#xbox">Volver al catálogo Xbox</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container footer-wrap">
+      <p>© 2026 DropGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function changeImage(src, el) {
+      document.getElementById('main-product-img').src = src;
+      const thumbs = document.querySelectorAll('.gallery-thumbs div');
+      thumbs.forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

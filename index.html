@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReviewGamer - Las mejores reseñas de periféricos</title>
+  <meta name="description" content="Análisis expertos de teclados mecánicos, mouse gamer y accesorios para elevar tu setup al siguiente nivel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="ReviewGamer">
+  <meta property="og:description" content="Análisis expertos de periféricos gamer">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="theme-color" content="#05060b">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a class="logo" href="#inicio" aria-label="ReviewGamer — Ir al inicio">ReviewGamer</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#reseñas-destacadas" class="active" aria-current="true">Reseñas</a>
+        <a href="#guias">Guías de compra</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#nosotros">Sobre nosotros</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Expertos en periféricos gamer</p>
+          <h1>Encuentra el setup perfecto con nuestras reseñas</h1>
+          <p class="hero-copy">
+            Analizamos los teclados y mouse más virales del mercado para que sepas exactamente qué comprar según tu presupuesto y estilo de juego.
+          </p>
+          <div class="hero-actions">
+            <a href="#reseñas-destacadas" class="btn btn-primary">Explorar</a>
+            <a href="#guias" class="btn btn-ghost">Ver guías</a>
+          </div>
+          <div class="social-proof">
+            <span style="display: flex; align-items: center; gap: 0.5rem;" aria-label="Calificación media: 4.9 de 5 estrellas"><span class="star-icon" role="img" aria-hidden="true">★</span> 4.9/5 Calificación media</span>
+            <span>+500 Periféricos analizados</span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="media-card">
+            <div class="glass-badge">TOP RESEÑAS 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-verdict" id="veredicto">
+      <div class="container">
+        <div class="section-header-compact">
+          <h2>Análisis Flash: Recientes</h2>
+        </div>
+        <div class="verdict-grid">
+          <div class="verdict-card good">
+            <div class="verdict-badge" role="status" aria-label="Veredicto: LO MEJOR">LO MEJOR</div>
+            <div class="verdict-score">9.8</div>
+            <h3>Titan Force Pro</h3>
+            <p>“Calidad de construcción insuperable y latencia cero.”</p>
+          </div>
+          
+          <div class="verdict-card medium">
+            <div class="verdict-badge" role="status" aria-label="Veredicto: ACEPTABLE">ACEPTABLE</div>
+            <div class="verdict-score">6.5</div>
+            <h3>Nova Aim G1</h3>
+            <p>“El sensor cumple, pero los materiales se sienten baratos.”</p>
+          </div>
+          
+          <div class="verdict-card bad">
+            <div class="verdict-badge" role="status" aria-label="Veredicto: EVITAR">EVITAR</div>
+            <div class="verdict-score">2.0</div>
+            <h3>RGB DeskGlow</h3>
+            <p>“Se despega solo y la aplicación es un desastre total.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reseñas-destacadas">
+      <div class="container">
+        <h2>Reseñas destacadas</h2>
+        <p class="section-subtitle">Los análisis más consultados por la comunidad este mes.</p>
+        <div class="cards-grid">
+          <article class="product-card">
+            <div class="tag editor">Editor's Choice</div>
+            <img src="assets/teclado-3.png" alt="Teclado Mecánico X90">
+            <h3>Teclado Mecánico X90</h3>
+            <p>¿Realmente vale la pena por su precio? Analizamos sus switches y latencia.</p>
+            <div class="score-visualizer">
+              <div class="score-text">Puntaje: <span class="score-value">9.5/10</span></div>
+              <a class="btn-card" href="teclado-mecanico-x90.html">Leer Reseña</a>
+            </div>
+          </article>
+          
+          <article class="product-card">
+            <div class="tag quality">Mejor Calidad/Precio</div>
+            <img src="assets/mouse-1.png" alt="Mouse Precision V3">
+            <h3>Mouse Precision V3</h3>
+            <p>Un sensor de gama alta en un cuerpo económico. Lo pusimos a prueba en Valorant.</p>
+            <div class="score-visualizer">
+              <div class="score-text">Puntaje: <span class="score-value">8.8/10</span></div>
+              <a class="btn-card" href="mouse-precision-v3-rgb.html">Leer Reseña</a>
+            </div>
+          </article>
+          
+          <article class="product-card">
+            <div class="tag viral">Más Viral</div>
+            <img src="assets/deskglow.png" alt="Kit RGB DeskGlow">
+            <h3>Kit RGB DeskGlow</h3>
+            <p>Probamos la iluminación que todos usan en TikTok. ¿Es fácil de configurar?</p>
+            <div class="score-visualizer">
+              <div class="score-text">Puntaje: <span class="score-value">9.2/10</span></div>
+              <a class="btn-card" href="kit-rgb-deskglow.html">Leer Reseña</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="reseñas">
+      <div class="container">
+        <h2>Explora por categoría</h2>
+        <div class="categories">
+          <a class="category-card" href="#teclados">Teclados</a>
+          <a class="category-card" href="#mouse-gamer">Mouse</a>
+          <a class="category-card" href="#lifestyle">Lifestyle & Setup</a>
+          <a class="category-card hot" href="#guias">Top 10 🔥</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teclados">
+      <div class="container">
+        <h2 class="section-title-large">Reseñas: Teclados Gamer</h2>
+        <p class="section-subtitle large">Análisis detallados sobre switches, keycaps y software de personalización.</p>
+        <div class="product-grid">
+          <article class="product-card-small">
+            <img src="assets/teclado-1.png" alt="Teclado Shadow Core 68">
+            <h3>Shadow Core 68</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.8 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.8 / 5.0</p>
+            <p class="kb-comment">“El mejor formato 65% para presupuestos ajustados.”</p>
+            <p class="kb-description">Análisis de durabilidad y latencia en este teclado ultra-compacto.</p>
+            <a class="btn btn-small auto-top" href="teclado-shadow-core-68.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/teclado-2.png" alt="Teclado Sakura Linear TKL">
+            <h3>Sakura Linear TKL</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.7 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.7 / 5.0</p>
+            <p class="kb-comment">“Suaves como la seda, perfectos para escritura y gaming.”</p>
+            <p class="kb-description">Probamos los switches lineales en largas sesiones de juego.</p>
+            <a class="btn btn-small auto-top" href="teclado-sakura-linear-tkl.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/teclado-3.png" alt="Teclado IronPulse RGB">
+            <h3>IronPulse RGB</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.6 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.6 / 5.0</p>
+            <p class="kb-comment">“Iluminación espectacular, pero el software es mejorable.”</p>
+            <p class="kb-description">Revisión completa de la construcción y efectos de iluminación.</p>
+            <a class="btn btn-small auto-top" href="teclado-ironpulse-rgb.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/teclado-4.png" alt="Teclado Titan Force Pro">
+            <h3>Titan Force Pro</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.9 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.9 / 5.0</p>
+            <p class="kb-comment">“Un tanque de guerra para tu escritorio. Calidad premium.”</p>
+            <p class="kb-description">¿Vale la pena la inversión? Lo comparamos con la competencia.</p>
+            <a class="btn btn-small auto-top" href="teclado-titan-force-pro.html">Ver Reseña</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="mouse-gamer">
+      <div class="container">
+        <h2>Reseñas: Mouse Gamer</h2>
+        <p class="section-subtitle">Peso, sensores y ergonomía: lo que realmente importa para tu puntería.</p>
+        <div class="product-grid">
+          <article class="product-card-small">
+            <img src="assets/mouse-gamer-1.png" alt="Mouse Nova Aim G1">
+            <h3>Nova Aim G1</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.7 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.7 / 5.0</p>
+            <p class="kb-comment">“Ligero y con un sensor que no falla nunca.”</p>
+            <p class="kb-description">Evaluamos su rendimiento en Flick-shots y seguimiento.</p>
+            <a class="btn btn-small" href="mouse-nova-aim-g1.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/mouse-gamer-2.png" alt="Mouse Phantom Strike X">
+            <h3>Phantom Strike X</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.8 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.8 / 5.0</p>
+            <p class="kb-comment">“Ergonomía perfecta para agarre de palma.”</p>
+            <p class="kb-description">Análisis de los botones laterales y la rueda de desplazamiento.</p>
+            <a class="btn btn-small" href="mouse-phantom-strike-x.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/mouse-gamer-3.png" alt="Mouse Cyber Wolf M8">
+            <h3>Cyber Wolf M8</h3>
+            <p class="kb-rating" aria-label="Calificación: 4.6 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.6 / 5.0</p>
+            <p class="kb-comment">“Inalámbrico y sin lag apreciable. Una sorpresa.”</p>
+            <p class="kb-description">Prueba de duración de batería y estabilidad de conexión.</p>
+            <a class="btn btn-small" href="mouse-cyber-wolf-m8.html">Ver Reseña</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lifestyle">
+      <div class="container">
+        <h2>Lifestyle & Ambientación</h2>
+        <p class="section-subtitle">Gadgets y accesorios para darle personalidad y funcionalidad a tu espacio.</p>
+        
+        <h3 class="category-group-title">Iluminación & Estética</h3>
+        <div class="product-grid">
+          <article class="product-card-small">
+            <img src="assets/rgb-1.png" alt="Kit Tiras LED Smart">
+            <h4>Kit Tiras LED Smart</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.8 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.8 / 5.0</p>
+            <p class="kb-description">¿Se sincronizan bien con el monitor? Lo probamos.</p>
+            <a class="btn btn-small" href="rgb-tiras-led.html">Ver Análisis</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/rgb-2.png" alt="Paneles Hexagonales Quantum">
+            <h4>Paneles Hexagonales Quantum</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.9 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.9 / 5.0</p>
+            <p class="kb-description">Montaje y efectos de luz paso a paso.</p>
+            <a class="btn btn-small" href="rgb-paneles-hexagonales.html">Ver Análisis</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/rgb-3.png" alt="Lámpara de Monitor Aura">
+            <h4>Lámpara de Monitor Aura</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.7 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.7 / 5.0</p>
+            <p class="kb-description">¿Realmente reduce la fatiga visual?</p>
+            <a class="btn btn-small" href="rgb-lampara-monitor.html">Ver Análisis</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/rgb-4.png" alt="Stand RGB Nexus">
+            <h4>Stand RGB Nexus</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.6 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.6 / 5.0</p>
+            <p class="kb-description">Reseña sobre su estabilidad y hub USB.</p>
+            <a class="btn btn-small" href="rgb-stand-nexus.html">Ver Análisis</a>
+          </article>
+        </div>
+
+        <h3 class="category-group-title alt">Productividad & Audio</h3>
+        <div class="product-grid">
+          <article class="product-card-small">
+            <img src="assets/accesorio-1.png" alt="Mousepad XL Blue Beast">
+            <h4>Mousepad XL Blue Beast</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.8 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.8 / 5.0</p>
+            <p class="kb-description">Control vs Velocidad: probamos su superficie.</p>
+            <a class="btn btn-small" href="accesorio-mousepad.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/accesorio-2.png" alt="Webcam StreamPro 1080p">
+            <h4>Webcam StreamPro 1080p</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.7 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.7 / 5.0</p>
+            <p class="kb-description">Calidad de imagen en condiciones de poca luz.</p>
+            <a class="btn btn-small" href="accesorio-webcam.html">Ver Reseña</a>
+          </article>
+
+          <article class="product-card-small">
+            <img src="assets/accesorio-3.png" alt="Micrófono StudioCast RGB">
+            <h4>Micrófono StudioCast RGB</h4>
+            <p class="kb-rating" aria-label="Calificación: 4.9 de 5 estrellas">Puntaje: <span class="star-icon" role="img" aria-hidden="true">★</span> 4.9 / 5.0</p>
+            <p class="kb-description">Prueba de audio: ¿Sirve para podcasting?</p>
+            <a class="btn btn-small" href="accesorio-microfono.html">Ver Reseña</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="comunidad">
+      <div class="container">
+        <h2>Opiniones de la Comunidad</h2>
+        <p class="section-subtitle">Lo que dicen los usuarios reales sobre sus compras.</p>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="sentiment-badge sentiment-good" role="status" aria-label="Sentimiento: Recomendado">Recomendado</div>
+            <div class="stars" role="img" aria-label="Calificación: 5 de 5 estrellas"><span class="star-icon" aria-hidden="true">★★★★★</span> <span class="score-num">5.0 / 5.0</span></div>
+            <p>“El <strong>Titan Force Pro</strong> es, por lejos, el mejor teclado que he tenido. La respuesta táctil es instantánea y se siente súper robusto.”</p>
+            <span class="review-user">— @GamerMaster99</span>
+          </article>
+
+          <article class="review-card">
+            <div class="sentiment-badge sentiment-medium" role="status" aria-label="Sentimiento: Mejorable">Mejorable</div>
+            <div class="stars" role="img" aria-label="Calificación: 3 de 5 estrellas"><span class="star-icon" aria-hidden="true">★★★☆☆</span> <span class="score-num">3.0 / 5.0</span></div>
+            <p>“El <strong>Nova Aim G1</strong> tiene un sensor increíble, pero el cable es un poco rígido y el software de configuración es algo confuso.”</p>
+            <span class="review-user">— @TechReviewer_</span>
+          </article>
+
+          <article class="review-card">
+            <div class="sentiment-badge sentiment-bad" role="status" aria-label="Sentimiento: No recomendado">No recomendado</div>
+            <div class="stars" role="img" aria-label="Calificación: 1 de 5 estrellas"><span class="star-icon" aria-hidden="true">★☆☆☆☆</span> <span class="score-num">1.0 / 5.0</span></div>
+            <p>“Decepcionado con el <strong>Kit DeskGlow</strong>. Los colores no coinciden con la app y el adhesivo es de muy mala calidad. No lo compren.”</p>
+            <span class="review-user">— @UnhappyBuyer</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertos">
+      <div class="container">
+        <h2>Opinión de nuestros expertos</h2>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <p>“El mercado de teclados mecánicos está saturado, pero nuestras pruebas ayudan a filtrar lo que realmente es calidad.”</p>
+            <span>— Alex G., Analista Senior</span>
+          </article>
+          <article class="review-card">
+            <p>“No necesitas gastar $150 en un mouse para tener un sensor preciso. Hay joyas ocultas que reseñamos aquí.”</p>
+            <span>— Maria F., Gamer Pro</span>
+          </article>
+          <article class="review-card">
+            <p>“La ergonomía es clave. Mis reseñas se enfocan en evitar lesiones tras horas de juego.”</p>
+            <span>— Dr. Tech, Ergonomista</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promo" id="guias">
+      <div class="container">
+        <div class="promo-wrap">
+          <h2>📚 Guías de compra definitivas</h2>
+          <p>Aprende todo sobre periféricos antes de comprar. Actualizado semanalmente.</p>
+        </div>
+        
+        <div class="cards-grid">
+          <article class="product-card promo">
+            <div class="tag quality">Guía 2026</div>
+            <img src="assets/teclado-2.png" alt="Guía Teclados">
+            <h3>Cómo elegir tu primer teclado mecánico</h3>
+            <p>Switches rojos, azules o marrones? Te explicamos las diferencias y cuál es mejor para ti.</p>
+            <a class="btn btn-small btn-promo" href="guia-teclados.html">Leer Guía Completa</a>
+          </article>
+
+          <article class="product-card promo">
+            <div class="tag quality">Guía 2026</div>
+            <img src="assets/mouse-1.png" alt="Guía Mouse">
+            <h3>¿Qué DPI realmente necesitas?</h3>
+            <p>Desmitificamos los números altos de DPI y te enseñamos a configurar tu sensibilidad como un pro.</p>
+            <a class="btn btn-small btn-promo" href="guia-dpi-mouse.html">Leer Guía Completa</a>
+          </article>
+
+          <article class="product-card promo">
+            <div class="tag quality">Guía 2026</div>
+            <img src="assets/deskglow.png" alt="Guía Iluminación">
+            <h3>Teoría del color para tu Setup</h3>
+            <p>Cómo combinar luces RGB para que tu espacio no parezca un carnaval y se vea profesional.</p>
+            <a class="btn btn-small btn-promo" href="guia-teoria-color.html">Leer Guía Completa</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="nosotros">
+      <div class="container">
+        <h2>Sobre ReviewGamer</h2>
+        <p>
+          Somos un equipo de entusiastas del hardware dedicados a probar y analizar los últimos periféricos del mercado. No vendemos productos, vendemos honestidad.
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+      <nav aria-label="Navegación del pie de página">
+        <a href="javascript:void(0)">Transparencia</a>
+        <a href="javascript:void(0)">Metodología</a>
+        <a href="javascript:void(0)">Privacidad</a>
+        <a href="javascript:void(0)">Términos</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xbox Series S | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --xbox-green: #107c10;
+      --xbox-green-glow: rgba(16, 124, 16, 0.3);
+    }
+    .version-selector {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .version-btn {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .version-btn.active {
+      border-color: var(--xbox-green);
+      background: rgba(16, 124, 16, 0.1);
+      box-shadow: 0 0 10px var(--xbox-green-glow);
+    }
+    .version-btn:hover:not(.active) {
+      background: rgba(255,255,255,0.1);
+    }
+    .product-gallery .gallery-main {
+        background: #f0f0f0 !important; /* White console looks better on light grey */
+        border-radius: 12px;
+    }
+    .gallery-thumbs div {
+        background: #f0f0f0 !important;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#xbox">Consolas Xbox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main" style="border-radius: 12px; overflow: hidden; padding: 1rem; border: 1px solid rgba(16, 124, 16, 0.2);">
+            <img src="assets/xbox-s-1.jpg" alt="Xbox Series S Robot White vista principal" style="object-fit: contain;">
+          </div>
+          <div class="gallery-thumbs">
+            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid var(--xbox-green);"><img src="assets/xbox-s-1.jpg" alt="Xbox Series S Frontal" style="object-fit: contain;"></div>
+            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-s-2.jpg" alt="Xbox Series S Detalle" style="object-fit: contain;"></div>
+            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-s-3.jpg" alt="Xbox Series S Vertical" style="object-fit: contain;"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <h2 id="product-title" style="color: var(--xbox-green);">Xbox Series S – Robot White (512GB)</h2>
+          
+          <div class="version-selector">
+            <button class="version-btn active" data-version="white">Robot White 512GB</button>
+            <button class="version-btn" data-version="carbon">Carbon Black 1TB</button>
+          </div>
+
+          <p class="price-row"><span class="old" id="price-old">$349.99</span><span class="new" id="price-new" style="font-size: 1.8rem; color: var(--xbox-green);">$299.99</span></p>
+          <p id="product-desc" style="font-size: 1.1rem; color: var(--text);">Rendimiento de nueva generación en la consola Xbox más pequeña de la historia. Totalmente digital, rápida y potente.</p>
+          
+          <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <li id="benefit-storage">Almacenamiento: 512GB SSD de alta velocidad.</li>
+            <li>Resolución: Hasta 1440p con escalado a 4K.</li>
+            <li id="benefit-design">Diseño: Compacto y elegante acabado Robot White.</li>
+            <li>Digital: Juega sin discos, todo en la nube o descargado.</li>
+            <li>Quick Resume: Cambia entre múltiples juegos al instante.</li>
+          </ul>
+          
+          <div id="reviews-container" style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--xbox-green);">Reseñas Destacadas</h3>
+            <p class="kb-rating" id="rating-text" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.8 de 5 (3,120 valoraciones)</p>
+            
+            <div id="reviews-list">
+              <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+                <p class="kb-comment"><em>"Pequeña pero matona. Ideal para tenerla en el salón y jugar a todo lo de Game Pass."</em></p>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Sergio L. ✅ Compra verificada</p>
+              </div>
+              
+              <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+                <p class="kb-comment"><em>"La relación calidad-precio es insuperable. Carga los juegos rapidísimo."</em></p>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Monica D. ✅ Compra verificada</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full" style="font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem; background: var(--xbox-green); border-color: var(--xbox-green);">Añadir al carrito</button>
+          
+          <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
+            <span>🚚 Envío Rápido</span>
+            <span>🔒 Pago Seguro</span>
+            <span>⭐ Garantía Microsoft</span>
+          </div>
+
+          <p style="text-align: center;"><a class="btn btn-ghost" href="index.html#xbox">Volver a Xbox</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container footer-wrap">
+      <p>© 2026 DropGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Gallery Logic
+    const thumbs = document.querySelectorAll('.gallery-thumbs img');
+    const mainImg = document.querySelector('.gallery-main img');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        mainImg.src = this.src;
+        thumbs.forEach(t => t.parentElement.style.borderColor = 'transparent');
+        this.parentElement.style.borderColor = 'var(--xbox-green)';
+      });
+    });
+
+    // Version Selector Logic
+    const versionBtns = document.querySelectorAll('.version-btn');
+    const title = document.getElementById('product-title');
+    const priceOld = document.getElementById('price-old');
+    const priceNew = document.getElementById('price-new');
+    const desc = document.getElementById('product-desc');
+    const benefitStorage = document.getElementById('benefit-storage');
+    const benefitDesign = document.getElementById('benefit-design');
+    const ratingText = document.getElementById('rating-text');
+    const reviewsList = document.getElementById('reviews-list');
+
+    const versions = {
+      white: {
+        title: "Xbox Series S – Robot White (512GB)",
+        priceOld: "$349.99",
+        priceNew: "$299.99",
+        desc: "Rendimiento de nueva generación en la consola Xbox más pequeña de la historia. Totalmente digital, rápida y potente.",
+        storage: "Almacenamiento: 512GB SSD de alta velocidad.",
+        design: "Diseño: Compacto y elegante acabado Robot White.",
+        rating: "⭐ 4.8 de 5 (3,120 valoraciones)",
+        reviews: `
+          <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+            <p class="kb-comment"><em>"Pequeña pero matona. Ideal para tenerla en el salón y jugar a todo lo de Game Pass."</em></p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Sergio L. ✅ Compra verificada</p>
+          </div>
+          <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+            <p class="kb-comment"><em>"La relación calidad-precio es insuperable. Carga los juegos rapidísimo."</em></p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Monica D. ✅ Compra verificada</p>
+          </div>
+        `
+      },
+      carbon: {
+        title: "Xbox Series S – Carbon Black (1TB)",
+        priceOld: "$399.99",
+        priceNew: "$349.99",
+        desc: "Ahora con más almacenamiento y el mismo rendimiento increíble. Disfruta de 1TB de espacio para más juegos en un elegante acabado negro.",
+        storage: "Almacenamiento: 1TB SSD de ultra alta velocidad.",
+        design: "Diseño: Moderno acabado Carbon Black con mayor capacidad.",
+        rating: "⭐ 4.9 de 5 (850 valoraciones)",
+        reviews: `
+          <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+            <p class="kb-comment"><em>"El espacio extra es fundamental. El color negro se ve muy elegante en mi setup."</em></p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Javier P. ✅ Compra verificada</p>
+          </div>
+          <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+            <p class="kb-comment"><em>"Silenciosa y potente. Es la consola digital definitiva por este precio."</em></p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Lucía B. ✅ Compra verificada</p>
+          </div>
+        `
+      }
+    };
+
+    versionBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const v = this.getAttribute('data-version');
+        const data = versions[v];
+
+        // Update UI
+        title.innerText = data.title;
+        priceOld.innerText = data.priceOld;
+        priceNew.innerText = data.priceNew;
+        desc.innerText = data.desc;
+        benefitStorage.innerText = data.storage;
+        benefitDesign.innerText = data.design;
+        ratingText.innerText = data.rating;
+        reviewsList.innerHTML = data.reviews;
+
+        // Update active button
+        versionBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

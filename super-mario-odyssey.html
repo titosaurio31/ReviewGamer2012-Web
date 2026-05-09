@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Mario Odyssey | DropGamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">DropGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#nintendo">Consolas Nintendo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout">
+        <div class="product-gallery">
+          <div class="gallery-main" style="background: #fff;">
+            <img src="assets/mario-odyssey-cover.png" alt="Super Mario Odyssey Portada" style="object-fit: contain;">
+          </div>
+          <div class="gallery-thumbs">
+            <div style="background: #fff; cursor: pointer;"><img src="assets/mario-odyssey-cover.png" alt="Portada" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/mario-odyssey-1.jpg" alt="Gameplay Cappy" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/mario-odyssey-2.jpg" alt="Gameplay Goombas" style="object-fit: contain;"></div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="tag">Exclusivo</div>
+          <h2>Super Mario Odyssey</h2>
+          <p class="price-row"><span class="old">$59.99</span><span class="new" style="font-size: 1.8rem;">$49.99</span></p>
+          <p style="font-size: 1.1rem; color: var(--text);">Acompaña a Mario en una aventura en 3D por todo el mundo usando a Cappy para capturar enemigos y objetos. ¡Una obra maestra que todo poseedor de Switch debe jugar!</p>
+          
+          <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <li>Explora reinos inmensos llenos de secretos.</li>
+            <li>Nuevas mecánicas de captura con Cappy.</li>
+            <li>Gráficos vibrantes y jugabilidad perfecta.</li>
+            <li>Más de 500 energilunas por recolectar.</li>
+          </ul>
+          
+          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-2);">Reseñas de Jugadores</h3>
+            <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (1,240 valoraciones)</p>
+            
+            <div style="border-left: 3px solid var(--primary); padding-left: 1rem; margin-bottom: 1rem;">
+              <p class="kb-comment"><em>"El mejor juego de Mario que he jugado. La mecánica de capturar enemigos con el sombrero le da una variedad increíble."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Alex G. ✅ Compra verificada</p>
+            </div>
+            
+            <div style="border-left: 3px solid #00d9ff; padding-left: 1rem;">
+              <p class="kb-comment"><em>"Divertido de principio a fin. Lo jugué con mi hijo y nos la pasamos genial explorando cada rincón."</em></p>
+              <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Sandra P. ✅ Compra verificada</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full" style="font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem;">Comprar ahora</button>
+          
+          <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
+            <span>🚚 Envío Digital/Físico</span>
+            <span>🔒 Pago Seguro</span>
+            <span>⭐ Juego del Año</span>
+          </div>
+
+          <p style="text-align: center;"><a class="btn btn-ghost" href="index.html#nintendo">Volver a Nintendo</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container footer-wrap">
+      <p>© 2026 DropGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const thumbs = document.querySelectorAll('.gallery-thumbs img');
+    const mainImg = document.querySelector('.gallery-main img');
+    
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', function() {
+        mainImg.src = this.src;
+      });
+    });
+  </script>
+</body>
+</html>
