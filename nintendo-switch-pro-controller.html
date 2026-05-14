@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="author" content="ReviewGamer Team">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control Pro Nintendo Switch | ReviewGamer</title>
@@ -8,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -25,19 +27,19 @@
       <div class="container product-layout">
         <div class="product-gallery">
           <div class="gallery-main" style="background: #fff;">
-            <img src="assets/pro-controller-1.png" alt="Control Pro Nintendo Switch - Vista Frontal" style="object-fit: contain;">
+            <img src="assets/pro-controller-1.png" alt="Control Pro Nintendo Switch - Vista Frontal" class="img-contain">
           </div>
           <div class="gallery-thumbs">
-            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-1.png" alt="Vista Frontal" style="object-fit: contain;"></div>
-            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-2.png" alt="Vista Trasera" style="object-fit: contain;"></div>
-            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-box.png" alt="Caja" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-1.png" alt="Vista Frontal" class="img-contain"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-2.png" alt="Vista Trasera" class="img-contain"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/pro-controller-box.png" alt="Caja" class="img-contain"></div>
           </div>
         </div>
         <div class="product-info">
           <div class="tag">Oficial</div>
           <h1>Control Pro Nintendo Switch</h1>
-          <p class="price-row"><span class="old">$79.99</span><span class="new" style="font-size: 1.8rem;">$69.99</span></p>
-          <p style="font-size: 1.1rem; color: var(--text);">Lleva tus sesiones de juego al siguiente nivel con el Control Pro de Nintendo Switch. Incluye controles de movimiento, vibración HD, funcionalidad amiibo integrada y más.</p>
+          <p class="price-row"><span class="old">$79.99</span><span class="new" class="new price-large">$69.99</span></p>
+          <p style="font-size: 1.1rem;">Lleva tus sesiones de juego al siguiente nivel con el Control Pro de Nintendo Switch. Incluye controles de movimiento, vibración HD, funcionalidad amiibo integrada y más.</p>
           
           <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
             <li>Diseño ergonómico para sesiones largas de juego.</li>
@@ -47,7 +49,7 @@
             <li>Incluye cable de carga USB-C.</li>
           </ul>
           
-          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+          <div class="review-box-mini">
             <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-2);">Reseñas Destacadas</h3>
             <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.8 de 5 (3,150 valoraciones)</p>
             
@@ -82,15 +84,10 @@
     </div>
   </footer>
 
-  <script>
-    const thumbs = document.querySelectorAll('.gallery-thumbs img');
-    const mainImg = document.querySelector('.gallery-main img');
-    
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', function() {
-        mainImg.src = this.src;
-      });
-    });
-  </script>
+  
 </body>
 </html>
+
+
+
+

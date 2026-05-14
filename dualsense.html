@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="author" content="ReviewGamer Team">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control DualSense PS5 | ReviewGamer</title>
@@ -8,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,18 +26,18 @@
     <section class="section">
       <div class="container product-layout">
         <div class="product-gallery">
-          <div class="gallery-main" style="background: #fff; border-radius: 12px; overflow: hidden; padding: 2rem; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/dualsense-1.png" alt="Control DualSense PS5 vista principal" style="max-width: 100%; object-fit: contain;">
+          <div class="gallery-main" class="gallery-main rounded-glass light-bg flex-center-gap">
+            <img src="assets/dualsense-1.png" alt="Control DualSense PS5 vista principal" class="img-contain">
           </div>
           <div class="gallery-thumbs">
-            <div style="background: #fff; cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid var(--primary);"><img src="assets/dualsense-1.png" alt="DualSense Blanco" style="object-fit: contain;"></div>
-            <div style="background: #fff; cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/dualsense-2.png" alt="DualSense Caja" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid var(--primary);"><img src="assets/dualsense-1.png" alt="DualSense Blanco" class="img-contain"></div>
+            <div style="background: #fff; cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/dualsense-2.png" alt="DualSense Caja" class="img-contain"></div>
           </div>
         </div>
         <div class="product-info">
           <h1>Control Inalámbrico DualSense™</h1>
-          <p class="price-row"><span class="old">$74.99</span><span class="new" style="font-size: 1.8rem;">$69.99</span></p>
-          <p style="font-size: 1.1rem; color: var(--text);">Descubre una experiencia de juego más profunda e inmersiva con el innovador control de PS5™, que cuenta con retroalimentación háptica y efectos de gatillos dinámicos.</p>
+          <p class="price-row"><span class="old">$74.99</span><span class="new" class="new price-large">$69.99</span></p>
+          <p style="font-size: 1.1rem;">Descubre una experiencia de juego más profunda e inmersiva con el innovador control de PS5™, que cuenta con retroalimentación háptica y efectos de gatillos dinámicos.</p>
           
           <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
             <li>Retroalimentación háptica: Siente las acciones del juego con vibraciones realistas.</li>
@@ -45,7 +47,7 @@
             <li>Diseño Icónico: Evolución cómoda y moderna del control clásico de PlayStation.</li>
           </ul>
           
-          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+          <div class="review-box-mini">
             <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--primary-2);">Reseñas Destacadas</h3>
             <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (5,120 valoraciones)</p>
             
@@ -80,17 +82,10 @@
     </div>
   </footer>
 
-  <script>
-    const thumbs = document.querySelectorAll('.gallery-thumbs img');
-    const mainImg = document.querySelector('.gallery-main img');
-    
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', function() {
-        mainImg.src = this.src;
-        thumbs.forEach(t => t.parentElement.style.borderColor = 'transparent');
-        this.parentElement.style.borderColor = 'var(--primary)';
-      });
-    });
-  </script>
+  
 </body>
 </html>
+
+
+
+

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="author" content="ReviewGamer Team">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control Inalámbrico Xbox | ReviewGamer</title>
@@ -8,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -25,19 +27,19 @@
       <div class="container product-layout">
         <div class="product-gallery">
           <div class="gallery-main" style="background: #fff;">
-            <img src="assets/xbox-controller-1.jpg" alt="Control Inalámbrico Xbox - Carbon Black" style="object-fit: contain;">
+            <img src="assets/xbox-controller-1.jpg" alt="Control Inalámbrico Xbox - Carbon Black" class="img-contain">
           </div>
           <div class="gallery-thumbs">
-            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-1.jpg" alt="Carbon Black" style="object-fit: contain;"></div>
-            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-2.jpg" alt="Con Cable USB-C" style="object-fit: contain;"></div>
-            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-3.png" alt="Edición Neon" style="object-fit: contain;"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-1.jpg" alt="Carbon Black" class="img-contain"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-2.jpg" alt="Con Cable USB-C" class="img-contain"></div>
+            <div style="background: #fff; cursor: pointer;"><img src="assets/xbox-controller-3.png" alt="Edición Neon" class="img-contain"></div>
           </div>
         </div>
         <div class="product-info">
           <div class="tag" style="background: #107c10;">Oficial Xbox</div>
           <h1>Control Inalámbrico Xbox</h1>
-          <p class="price-row"><span class="old">$69.99</span><span class="new" style="font-size: 1.8rem;">$59.99</span></p>
-          <p style="font-size: 1.1rem; color: var(--text);">Experimenta el diseño modernizado del Control inalámbrico Xbox, con superficies esculpidas y una geometría refinada para una mayor comodidad durante el juego. Mantén el objetivo con el pad direccional híbrido y el agarre texturizado en los gatillos, botones superiores y carcasa trasera.</p>
+          <p class="price-row"><span class="old">$69.99</span><span class="new" class="new price-large">$59.99</span></p>
+          <p style="font-size: 1.1rem;">Experimenta el diseño modernizado del Control inalámbrico Xbox, con superficies esculpidas y una geometría refinada para una mayor comodidad durante el juego. Mantén el objetivo con el pad direccional híbrido y el agarre texturizado en los gatillos, botones superiores y carcasa trasera.</p>
           
           <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
             <li>Botón Compartir dedicado para capturar y compartir contenido sin problemas.</li>
@@ -47,7 +49,7 @@
             <li>Superficies texturizadas para un mejor agarre y precisión.</li>
           </ul>
           
-          <div style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+          <div class="review-box-mini">
             <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: #107c10;">Reseñas de Usuarios</h3>
             <p class="kb-rating" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (8,420 valoraciones)</p>
             
@@ -82,15 +84,10 @@
     </div>
   </footer>
 
-  <script>
-    const thumbs = document.querySelectorAll('.gallery-thumbs img');
-    const mainImg = document.querySelector('.gallery-main img');
-    
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', function() {
-        mainImg.src = this.src;
-      });
-    });
-  </script>
+  
 </body>
 </html>
+
+
+
+

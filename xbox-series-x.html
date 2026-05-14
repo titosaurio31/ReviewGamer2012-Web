@@ -1,51 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="author" content="ReviewGamer Team">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xbox Series X Galaxy Black Special Edition | ReviewGamer</title>
+  <meta name="description" content="Análisis detallado de la Xbox Series X Galaxy Black Special Edition con 2TB de almacenamiento.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    :root {
-      --xbox-green: #107c10;
-      --xbox-green-glow: rgba(16, 124, 16, 0.3);
-    }
-    .version-selector {
-      display: flex;
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .version-btn {
-      flex: 1;
-      padding: 0.8rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .version-btn.active {
-      border-color: var(--xbox-green);
-      background: rgba(16, 124, 16, 0.1);
-      box-shadow: 0 0 10px var(--xbox-green-glow);
-    }
-    .version-btn:hover:not(.active) {
-      background: rgba(255,255,255,0.1);
-    }
-    .product-gallery .gallery-main {
-        background: #111 !important; /* Xbox look is darker */
-    }
-    .gallery-thumbs div {
-        background: #111 !important;
-    }
-  </style>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -62,25 +27,25 @@
     <section class="section">
       <div class="container product-layout">
         <div class="product-gallery">
-          <div class="gallery-main" style="border-radius: 12px; overflow: hidden; padding: 1rem; border: 1px solid rgba(16, 124, 16, 0.2);">
-            <img src="assets/xbox-1.jpg" alt="Xbox Series X Galaxy Black vista principal" style="object-fit: contain;">
+          <div class="gallery-main rounded-glass dark-bg border-xbox">
+            <img src="assets/xbox-1.jpg" alt="Xbox Series X Galaxy Black vista principal" class="img-contain">
           </div>
           <div class="gallery-thumbs">
-            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid var(--xbox-green);"><img src="assets/xbox-1.jpg" alt="Xbox Series X Frontal" style="object-fit: contain;"></div>
-            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-2.jpg" alt="Xbox Series X Detalle" style="object-fit: contain;"></div>
-            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-3.jpg" alt="Xbox Series X con Control" style="object-fit: contain;"></div>
+            <div class="rounded-glass border-xbox" style="cursor: pointer; padding: 5px;"><img src="assets/xbox-1.jpg" alt="Xbox Series X Frontal" class="img-contain"></div>
+            <div class="rounded-glass" style="cursor: pointer; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-2.jpg" alt="Xbox Series X Detalle" class="img-contain"></div>
+            <div class="rounded-glass" style="cursor: pointer; padding: 5px; border: 1px solid transparent;"><img src="assets/xbox-3.jpg" alt="Xbox Series X con Control" class="img-contain"></div>
           </div>
         </div>
         <div class="product-info">
-          <h1 id="product-title" style="color: var(--xbox-green);">Xbox Series X – Galaxy Black Special Edition (2TB)</h1>
+          <h1 id="product-title" class="text-xbox">Xbox Series X – Galaxy Black Special Edition (2TB)</h1>
           
           <div class="version-selector">
-            <button type="button" class="version-btn active" data-version="galaxy">Galaxy Black 2TB</button>
+            <button type="button" class="version-btn active xbox" data-version="galaxy">Galaxy Black 2TB</button>
             <button class="version-btn" data-version="carbon">Carbon Black 1TB</button>
           </div>
 
-          <p class="price-row"><span class="old" id="price-old">$649.99</span><span class="new" id="price-new" style="font-size: 1.8rem; color: var(--xbox-green);">$599.99</span></p>
-          <p id="product-desc" style="font-size: 1.1rem; color: var(--text);">La consola más potente del mundo ahora con un diseño galáctico único. Disfruta de 2TB de almacenamiento y un acabado inspirado en las estrellas con sutiles destellos verdes.</p>
+          <p class="price-row"><span class="old" id="price-old">$649.99</span><span class="new price-large text-xbox" id="price-new">$599.99</span></p>
+          <p id="product-desc" style="font-size: 1.1rem;">La consola más potente del mundo ahora con un diseño galáctico único. Disfruta de 2TB de almacenamiento y un acabado inspirado en las estrellas con sutiles destellos verdes.</p>
           
           <ul class="benefits-list" style="margin-top: 1rem; margin-bottom: 2rem;">
             <li id="benefit-storage">Almacenamiento: 2TB SSD para todos tus juegos favoritos.</li>
@@ -90,24 +55,24 @@
             <li>Compatibilidad: Juega miles de títulos de cuatro generaciones de Xbox.</li>
           </ul>
           
-          <div id="reviews-container" style="background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; color: var(--xbox-green);">Reseñas Destacadas</h3>
+          <div id="reviews-container" class="review-box-mini">
+            <h3 class="text-xbox" style="margin-top: 0; margin-bottom: 0.5rem;">Reseñas Destacadas</h3>
             <p class="kb-rating" id="rating-text" style="font-size: 1.1rem; margin-bottom: 1.2rem;">⭐ 4.9 de 5 (1,240 valoraciones)</p>
             
             <div id="reviews-list">
-              <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+              <div class="review-item-border xbox">
                 <p class="kb-comment"><em>"El acabado es espectacular, las motas verdes brillan cuando les da la luz. Los 2TB son necesarios hoy en día."</em></p>
                 <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Roberto G. ✅ Compra verificada</p>
               </div>
               
-              <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+              <div class="review-item-border success">
                 <p class="kb-comment"><em>"Rápida, silenciosa y el diseño es mucho más bonito en persona que en fotos. Muy recomendada."</em></p>
                 <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Andrea L. ✅ Compra verificada</p>
               </div>
             </div>
           </div>
 
-          <button type="button" class="btn btn-primary full" style="font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem; background: var(--xbox-green); border-color: var(--xbox-green);">Añadir al carrito</button>
+          <button type="button" class="btn btn-primary full bg-xbox" style="font-size: 1.1rem; padding: 1rem; margin-bottom: 1rem;">Añadir al carrito</button>
           
           <div class="trust-row" style="justify-content: center; margin-bottom: 1.5rem;">
             <span>🚚 Envío Rápido</span>
@@ -128,30 +93,7 @@
   </footer>
 
   <script>
-    // Gallery Logic
-    const thumbs = document.querySelectorAll('.gallery-thumbs img');
-    const mainImg = document.querySelector('.gallery-main img');
-    
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', function() {
-        mainImg.src = this.src;
-        thumbs.forEach(t => t.parentElement.style.borderColor = 'transparent');
-        this.parentElement.style.borderColor = 'var(--xbox-green)';
-      });
-    });
-
-    // Version Selector Logic
-    const versionBtns = document.querySelectorAll('.version-btn');
-    const title = document.getElementById('product-title');
-    const priceOld = document.getElementById('price-old');
-    const priceNew = document.getElementById('price-new');
-    const desc = document.getElementById('product-desc');
-    const benefitStorage = document.getElementById('benefit-storage');
-    const benefitDesign = document.getElementById('benefit-design');
-    const ratingText = document.getElementById('rating-text');
-    const reviewsList = document.getElementById('reviews-list');
-
-    const versions = {
+    const productVersions = {
       galaxy: {
         title: "Xbox Series X – Galaxy Black Special Edition (2TB)",
         priceOld: "$649.99",
@@ -161,11 +103,11 @@
         design: "Diseño Único: Acabado Galaxy Black con base verde Xbox.",
         rating: "⭐ 4.9 de 5 (1,240 valoraciones)",
         reviews: `
-          <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+          <div class="review-item-border xbox">
             <p class="kb-comment"><em>"El acabado es espectacular, las motas verdes brillan cuando les da la luz. Los 2TB son necesarios hoy en día."</em></p>
             <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Roberto G. ✅ Compra verificada</p>
           </div>
-          <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+          <div class="review-item-border success">
             <p class="kb-comment"><em>"Rápida, silenciosa y el diseño es mucho más bonito en persona que en fotos. Muy recomendada."</em></p>
             <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Andrea L. ✅ Compra verificada</p>
           </div>
@@ -180,38 +122,18 @@
         design: "Diseño Clásico: Elegante acabado Carbon Black minimalista.",
         rating: "⭐ 4.8 de 5 (5,420 valoraciones)",
         reviews: `
-          <div style="border-left: 3px solid var(--xbox-green); padding-left: 1rem; margin-bottom: 1rem;">
+          <div class="review-item-border xbox">
             <p class="kb-comment"><em>"La mejor compra que he hecho. Game Pass funciona de maravilla y la consola es una bestia silenciosa."</em></p>
             <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Marcos T. ✅ Compra verificada</p>
           </div>
-          <div style="border-left: 3px solid #4ade80; padding-left: 1rem;">
+          <div class="review-item-border success">
             <p class="kb-comment"><em>"El diseño original sigue siendo el más elegante. El rendimiento en 4K es simplemente impecable."</em></p>
             <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem;">— Elena S. ✅ Compra verificada</p>
           </div>
         `
       }
     };
-
-    versionBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const v = this.getAttribute('data-version');
-        const data = versions[v];
-
-        // Update UI
-        title.innerText = data.title;
-        priceOld.innerText = data.priceOld;
-        priceNew.innerText = data.priceNew;
-        desc.innerText = data.desc;
-        benefitStorage.innerText = data.storage;
-        benefitDesign.innerText = data.design;
-        ratingText.innerText = data.rating;
-        reviewsList.innerHTML = data.reviews;
-
-        // Update active button
-        versionBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
   </script>
 </body>
 </html>
+

@@ -978,3 +978,82 @@ textarea {
   font-size: 1.1rem;
   padding: 0.8rem;
 }
+
+/* --- New Consolidated Styles --- */
+
+/* Brand Colors & Variables */
+:root {
+  --xbox-green: #107c10;
+  --xbox-green-glow: rgba(16, 124, 16, 0.3);
+  --ps-blue: #00439c;
+  --ps-blue-glow: rgba(0, 67, 156, 0.3);
+  --nintendo-red: #e60012;
+  --nintendo-red-glow: rgba(230, 0, 18, 0.3);
+}
+
+/* Utility Classes */
+.flex-center-gap { display: flex !important; align-items: center !important; gap: 0.5rem !important; }
+.img-contain { object-fit: contain !important; }
+.rounded-glass { border-radius: 12px; overflow: hidden; }
+.border-xbox { border: 1px solid rgba(16, 124, 16, 0.2) !important; }
+.text-xbox { color: var(--xbox-green) !important; }
+.bg-xbox { background: var(--xbox-green) !important; border-color: var(--xbox-green) !important; }
+.border-ps { border: 1px solid rgba(0, 67, 156, 0.2) !important; }
+.text-ps { color: var(--ps-blue) !important; }
+.bg-ps { background: var(--ps-blue) !important; border-color: var(--ps-blue) !important; }
+
+/* Version Selector */
+.version-selector {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.version-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}
+.version-btn.active {
+  border-color: var(--primary);
+  background: rgba(123, 44, 255, 0.1);
+  box-shadow: 0 0 10px rgba(123, 44, 255, 0.3);
+}
+.version-btn.active.xbox {
+  border-color: var(--xbox-green);
+  background: rgba(16, 124, 16, 0.1);
+  box-shadow: 0 0 10px var(--xbox-green-glow);
+}
+.version-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Specific Adjustments */
+.gallery-main.dark-bg { background: #111 !important; }
+.gallery-main.light-bg { background: #f0f0f0 !important; }
+
+.review-box-mini {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-item-border {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.review-item-border.xbox { border-left-color: var(--xbox-green); }
+.review-item-border.success { border-left-color: var(--success); }
+
+.price-large { font-size: 1.8rem; font-weight: 700; }
+
