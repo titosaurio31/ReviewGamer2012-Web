@@ -9,7 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
     initGalleries();
     initVersionSelectors();
     initBackToTop();
+    initScrollSpy();
 });
+
+/**
+ * Scroll Spy for Bottom Nav
+ */
+function initScrollSpy() {
+    const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        bottomNavItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
 
 /**
  * Mobile Menu Logic
