@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     initGalleries();
     initVersionSelectors();
+    initBackToTop();
 });
 
 /**
@@ -125,3 +126,32 @@ function initVersionSelectors() {
         });
     });
 }
+
+/**
+ * Back to Top Button Logic
+ */
+function initBackToTop() {
+    const btn = document.createElement("a");
+    btn.innerHTML = "↑";
+    btn.className = "back-to-top";
+    btn.href = "#";
+    btn.setAttribute("aria-label", "Volver arriba");
+    document.body.appendChild(btn);
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+    });
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+

@@ -14,6 +14,9 @@
   --danger: #ff4d4d;
   --accent-primary: var(--secondary);
   --primary-2: #00d9ff;
+  --xbox-green: #107c10;
+  --ps-blue: #00439c;
+  --nintendo-red: #e60012;
   --transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1056,4 +1059,38 @@ textarea {
 .review-item-border.success { border-left-color: var(--success); }
 
 .price-large { font-size: 1.8rem; font-weight: 700; }
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--secondary);
+  transform: translateY(-5px);
+  color: #000;
+}
+
 
