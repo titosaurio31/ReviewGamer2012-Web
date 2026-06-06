@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>Redragon K521 Netherbane RGB | ReviewGamer</title>
+  <meta name="description" content="Análisis completo del Redragon K521 Netherbane RGB, teclado gaming de membrana con iluminación RGB completa, 104 teclas y Anti-Ghosting. La mejor opción calidad-precio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    /* ===== ESTILOS EXCLUSIVOS K521 ===== */
+    :root {
+      --k521-red: #e63946;
+      --k521-orange: #f4a261;
+      --k521-glow: rgba(230, 57, 70, 0.45);
+    }
+
+    /* Hero Banner */
+    .k521-hero {
+      background: linear-gradient(135deg, #0a0a0f 0%, #12001a 40%, #1a0010 100%);
+      border-bottom: 2px solid var(--k521-red);
+      padding: 3rem 0 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .k521-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(230,57,70,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .k521-hero-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--k521-red), #c1121f);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      padding: 0.35rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 16px var(--k521-glow);
+    }
+    .k521-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 3.2rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff 30%, var(--k521-red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.5rem;
+      line-height: 1.15;
+    }
+    .k521-hero-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+
+    /* Galería */
+    .k521-gallery {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .k521-gallery-main {
+      background: linear-gradient(145deg, #12001a, #0d0d1a);
+      border: 1.5px solid rgba(230,57,70,0.35);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 340px;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: border-color 0.3s;
+    }
+    .k521-gallery-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(230,57,70,0.12) 0%, transparent 70%);
+    }
+    .k521-gallery-main:hover {
+      border-color: var(--k521-red);
+    }
+    .k521-gallery-main img {
+      max-width: 100%;
+      max-height: 310px;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.4s ease;
+      filter: drop-shadow(0 0 30px rgba(230,57,70,0.4));
+    }
+    .k521-gallery-main:hover img {
+      transform: scale(1.04);
+    }
+    .k521-gallery-thumbs {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .k521-thumb {
+      background: linear-gradient(145deg, #12001a, #0d0d1a);
+      border: 1.5px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.2s;
+      overflow: hidden;
+    }
+    .k521-thumb:hover, .k521-thumb.active {
+      border-color: var(--k521-red);
+      transform: scale(1.03);
+    }
+    .k521-thumb img {
+      width: 100%;
+      height: 90px;
+      object-fit: contain;
+      transition: filter 0.3s;
+    }
+    .k521-thumb:hover img {
+      filter: drop-shadow(0 0 10px rgba(230,57,70,0.5));
+    }
+
+    /* Rating stars */
+    .k521-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+    .stars {
+      color: #f4a261;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+    }
+    .rating-count {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem;
+    }
+
+    /* Price box */
+    .k521-price-box {
+      background: linear-gradient(135deg, rgba(230,57,70,0.1), rgba(230,57,70,0.05));
+      border: 1px solid rgba(230,57,70,0.3);
+      border-radius: 14px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .k521-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--k521-red);
+      text-shadow: 0 0 20px var(--k521-glow);
+    }
+    .k521-price-old {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+    }
+    .k521-discount-badge {
+      background: var(--k521-red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+    }
+
+    /* Features grid */
+    .k521-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .k521-feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .k521-feature-card:hover {
+      border-color: rgba(230,57,70,0.4);
+      background: rgba(230,57,70,0.05);
+    }
+    .k521-feature-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .k521-feature-card h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 0.2rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .k521-feature-card p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Specs table */
+    .k521-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .k521-specs-title {
+      background: linear-gradient(90deg, rgba(230,57,70,0.2), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      color: var(--k521-red);
+      letter-spacing: 1px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .k521-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .k521-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.2s;
+    }
+    .k521-specs tr:last-child { border-bottom: none; }
+    .k521-specs tr:hover { background: rgba(230,57,70,0.05); }
+    .k521-specs th {
+      padding: 0.8rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem;
+      width: 42%;
+    }
+    .k521-specs td {
+      padding: 0.8rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* CTA Amazon */
+    .k521-cta {
+      background: linear-gradient(135deg, #1a0010, #0d001a);
+      border: 1.5px solid rgba(230,57,70,0.4);
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .k521-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(230,57,70,0.1) 0%, transparent 70%);
+    }
+    .k521-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .k521-cta p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .btn-amazon-k521 {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #e63946, #c1121f);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--k521-glow), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .btn-amazon-k521:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 45px rgba(230,57,70,0.7), 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .trust-badges span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Pro/Con */
+    .k521-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .verdict-box {
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+    }
+    .verdict-pro {
+      background: rgba(0,200,100,0.06);
+      border: 1px solid rgba(0,200,100,0.2);
+    }
+    .verdict-con {
+      background: rgba(230,57,70,0.06);
+      border: 1px solid rgba(230,57,70,0.2);
+    }
+    .verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .verdict-pro h4 { color: #00c864; }
+    .verdict-con h4 { color: var(--k521-red); }
+    .verdict-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .verdict-box ul li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.4;
+    }
+    .verdict-pro ul li::before { content: '✓'; color: #00c864; font-weight: 700; flex-shrink: 0; }
+    .verdict-con ul li::before { content: '✗'; color: var(--k521-red); font-weight: 700; flex-shrink: 0; }
+
+    /* Reviews */
+    .k521-reviews {
+      margin-bottom: 2rem;
+    }
+    .review-card-k521 {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-left: 3px solid var(--k521-red);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 0.8rem;
+      transition: background 0.2s;
+    }
+    .review-card-k521:hover { background: rgba(255,255,255,0.05); }
+    .review-card-k521 .review-stars { color: #f4a261; font-size: 0.85rem; margin-bottom: 0.4rem; }
+    .review-card-k521 p { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin: 0 0 0.4rem; font-style: italic; line-height: 1.55; }
+    .review-card-k521 .reviewer { font-size: 0.78rem; color: rgba(255,255,255,0.38); }
+
+    /* RGB Score Bar */
+    .score-bar-wrap { margin-bottom: 1rem; }
+    .score-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.3rem;
+    }
+    .score-bar-label span:last-child { color: #fff; font-weight: 600; }
+    .score-bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--k521-red), #f4a261);
+      transition: width 1s ease;
+    }
+
+    /* Section header */
+    .section-header-k521 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-header-k521 h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .section-header-k521::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .k521-gallery { grid-template-columns: 1fr; }
+      .k521-gallery-thumbs { grid-template-rows: none; grid-template-columns: repeat(3, 1fr); }
+      .k521-thumb img { height: 70px; }
+      .k521-features { grid-template-columns: 1fr; }
+      .k521-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .k521-hero h1 { font-size: 1.6rem; }
+      .k521-price-box { flex-direction: column; align-items: flex-start; }
+      .k521-price-tag { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#teclados">Teclados Gamer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="k521-hero">
+    <div class="container">
+      <div class="k521-hero-badge">🔴 Teclado Gaming · Membrana RGB</div>
+      <h1>Redragon K521<br>Netherbane RGB</h1>
+      <p class="k521-hero-sub">La experiencia gamer con iluminación RGB completa al mejor precio del mercado</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container product-layout" style="display: block;">
+
+        <!-- GALERÍA + INFO -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; margin-bottom: 3rem;">
+
+          <!-- GALERÍA -->
+          <div>
+            <div class="k521-gallery-main" id="k521-main-img">
+              <img src="assets/redragon_k552.png" alt="Redragon K521 Netherbane RGB vista principal" id="main-keyboard-img">
+            </div>
+            <div class="k521-gallery-thumbs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 0.75rem;">
+              <div class="k521-thumb active" onclick="changeImg(this, 'assets/redragon_k552.png', 'Redragon K521 Netherbane RGB frontal')">
+                <img src="assets/redragon_k552.png" alt="Vista frontal">
+              </div>
+              <div class="k521-thumb" onclick="changeImg(this, 'assets/teclado-4.png', 'Redragon K521 detalle RGB')">
+                <img src="assets/teclado-4.png" alt="Detalle RGB">
+              </div>
+              <div class="k521-thumb" onclick="changeImg(this, 'assets/rk61_main.png', 'Redragon K521 lateral')">
+                <img src="assets/rk61_main.png" alt="Vista lateral">
+              </div>
+            </div>
+          </div>
+
+          <!-- INFO -->
+          <div>
+            <div class="k521-rating">
+              <span class="stars">★★★★½</span>
+              <strong style="color:#fff;">4.5</strong>
+              <span class="rating-count">(+2,800 valoraciones en Amazon)</span>
+            </div>
+
+            <div class="k521-price-box">
+              <div>
+                <div class="k521-price-old">R$ 249,90</div>
+                <div class="k521-price-tag">R$ 179,90</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="k521-discount-badge">28% OFF</div>
+                <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem;">Precio Amazon Brasil</div>
+              </div>
+            </div>
+
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+              El <strong style="color:#fff;">Redragon K521 Netherbane RGB</strong> es un teclado de membrana gaming full-size diseñado para quienes quieren una experiencia visual RGB impresionante con el precio más accesible del mercado. Perfecto para gamers casual y competitivos.
+            </p>
+
+            <div class="k521-features">
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">⌨️</span>
+                <div>
+                  <h4>104 Teclas Full-Size</h4>
+                  <p>Diseño completo con teclado numérico y todas las teclas de función</p>
+                </div>
+              </div>
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">🌈</span>
+                <div>
+                  <h4>RGB 16.8M Colores</h4>
+                  <p>Iluminación RGB por tecla con 9 efectos dinámicos predefinidos</p>
+                </div>
+              </div>
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">⚡</span>
+                <div>
+                  <h4>Anti-Ghosting</h4>
+                  <p>Tecnología anti-ghosting en teclas WASD y de acción principales</p>
+                </div>
+              </div>
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">🔊</span>
+                <div>
+                  <h4>Teclas Multimedia</h4>
+                  <p>Controles multimedia integrados: volumen, reproducción y más</p>
+                </div>
+              </div>
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">🖥️</span>
+                <div>
+                  <h4>Conexión USB</h4>
+                  <p>Cable USB trenzado de alta velocidad, plug & play sin drivers</p>
+                </div>
+              </div>
+              <div class="k521-feature-card">
+                <span class="k521-feature-icon">🛡️</span>
+                <div>
+                  <h4>Resistente al Agua</h4>
+                  <p>Diseño resistente a salpicaduras para mayor durabilidad</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTÓN AMAZON -->
+            <a href="https://www.amazon.com.br/Teclado-Membrana-Redragon-Netherbane-K521-RGB/dp/B0DP7NDDQJ" target="_blank" rel="noopener noreferrer" class="btn-amazon-k521" style="width: 100%; justify-content: center;">
+              🛒 Comprar en Amazon Brasil
+            </a>
+            <div class="trust-badges">
+              <span>🚚 Envío Prime disponible</span>
+              <span>🔒 Pago seguro</span>
+              <span>↩️ Garantía 30 días</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ESPECIFICACIONES TÉCNICAS -->
+        <div class="section-header-k521">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="k521-specs" style="margin-bottom: 3rem;">
+          <div class="k521-specs-title">FICHA TÉCNICA COMPLETA</div>
+          <table>
+            <tr>
+              <th scope="row">Modelo</th>
+              <td>Redragon K521 Netherbane RGB</td>
+            </tr>
+            <tr>
+              <th scope="row">Tipo de Switch</th>
+              <td>Membrana de alta respuesta</td>
+            </tr>
+            <tr>
+              <th scope="row">Número de Teclas</th>
+              <td>104 teclas (Full-Size)</td>
+            </tr>
+            <tr>
+              <th scope="row">Iluminación</th>
+              <td>RGB 16.8 millones de colores</td>
+            </tr>
+            <tr>
+              <th scope="row">Efectos de luz</th>
+              <td>9 efectos RGB dinámicos</td>
+            </tr>
+            <tr>
+              <th scope="row">Interfaz</th>
+              <td>USB 2.0 (Plug & Play)</td>
+            </tr>
+            <tr>
+              <th scope="row">Anti-Ghosting</th>
+              <td>Sí (teclas principales)</td>
+            </tr>
+            <tr>
+              <th scope="row">Teclas multimedia</th>
+              <td>Sí (combinación Fn)</td>
+            </tr>
+            <tr>
+              <th scope="row">Resistencia al agua</th>
+              <td>Salpicaduras (IPX0)</td>
+            </tr>
+            <tr>
+              <th scope="row">Compatibilidad</th>
+              <td>Windows / Mac / Linux</td>
+            </tr>
+            <tr>
+              <th scope="row">Longitud del cable</th>
+              <td>1.8 metros trenzado</td>
+            </tr>
+            <tr>
+              <th scope="row">Dimensiones</th>
+              <td>440 × 130 × 35 mm</td>
+            </tr>
+            <tr>
+              <th scope="row">Peso</th>
+              <td>~780 g</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- PUNTUACIONES -->
+        <div class="section-header-k521">
+          <h2>📊 PUNTUACIONES</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.8rem; margin-bottom: 3rem;">
+          <div class="score-bar-wrap">
+            <div class="score-bar-label"><span>Iluminación RGB</span><span>9.5 / 10</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: 95%"></div></div>
+          </div>
+          <div class="score-bar-wrap">
+            <div class="score-bar-label"><span>Calidad / Precio</span><span>9.2 / 10</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: 92%"></div></div>
+          </div>
+          <div class="score-bar-wrap">
+            <div class="score-bar-label"><span>Comodidad de uso</span><span>8.4 / 10</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: 84%"></div></div>
+          </div>
+          <div class="score-bar-wrap">
+            <div class="score-bar-label"><span>Durabilidad</span><span>8.0 / 10</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="score-bar-wrap">
+            <div class="score-bar-label"><span>Rendimiento Gaming</span><span>8.6 / 10</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width: 86%"></div></div>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07);">
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.4); letter-spacing: 2px; margin-bottom: 0.4rem;">PUNTAJE REVIEWGAMER</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 700; color: var(--k521-red); text-shadow: 0 0 30px var(--k521-glow);">8.7<span style="font-size: 1.5rem; color: rgba(255,255,255,0.3)">/10</span></div>
+          </div>
+        </div>
+
+        <!-- PRO Y CONTRA -->
+        <div class="section-header-k521">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="k521-verdict" style="margin-bottom: 3rem;">
+          <div class="verdict-box verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>Iluminación RGB de alta calidad a precio de entrada</li>
+              <li>9 efectos de luz programables sin software</li>
+              <li>Construcción sólida y cómoda para largas sesiones</li>
+              <li>Teclas multimedia muy prácticas</li>
+              <li>Plug & play sin necesidad de instalar drivers</li>
+              <li>Resistencia básica a salpicaduras</li>
+            </ul>
+          </div>
+          <div class="verdict-box verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>Switches de membrana (menor precisión vs mecánicos)</li>
+              <li>Anti-Ghosting solo en teclas principales</li>
+              <li>Cable no removible</li>
+              <li>Sin software de personalización avanzada</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- REVIEWS -->
+        <div class="section-header-k521">
+          <h2>💬 RESEÑAS DE USUARIOS</h2>
+        </div>
+        <div class="k521-reviews" style="margin-bottom: 3rem;">
+          <div class="review-card-k521">
+            <div class="review-stars">★★★★★</div>
+            <p>"Compré este teclado hace 3 meses y estoy encantado. La iluminación RGB es espectacular, muy brillante incluso de día. Para gaming casual y trabajo es perfecto, muy cómodo y los efectos de luz son increíbles."</p>
+            <div class="reviewer">— Carlos M. ✅ Compra Verificada · Amazon Brasil</div>
+          </div>
+          <div class="review-card-k521">
+            <div class="review-stars">★★★★½</div>
+            <p>"Excelente relación calidad-precio. El RGB es muy bonito y tiene bastantes modos. Las teclas responden bien para gaming. Si buscas algo económico con buen diseño, este es el indicado. No es mecánico pero cumple perfectamente."</p>
+            <div class="reviewer">— Ana R. ✅ Compra Verificada · Amazon Brasil</div>
+          </div>
+          <div class="review-card-k521">
+            <div class="review-stars">★★★★★</div>
+            <p>"Llegó rápido y bien empacado. El teclado se siente sólido, el RGB es hermoso y tiene muchos efectos. Uso mucho el modo ola y el arcoíris. Para alguien que no quiere gastar mucho en un mecánico, es una compra 100% recomendable."</p>
+            <div class="reviewer">— Pedro L. ✅ Compra Verificada · Amazon Brasil</div>
+          </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="k521-cta">
+          <h3>🎮 ¿Listo para llevar tu setup al siguiente nivel?</h3>
+          <p>El Redragon K521 Netherbane RGB está disponible en Amazon Brasil con envío Prime y garantía oficial</p>
+          <a href="https://www.amazon.com.br/Teclado-Membrana-Redragon-Netherbane-K521-RGB/dp/B0DP7NDDQJ" target="_blank" rel="noopener noreferrer" class="btn-amazon-k521">
+            🛒 Ver en Amazon Brasil — R$ 179,90
+          </a>
+          <div class="trust-badges">
+            <span>🚚 Envío rápido disponible</span>
+            <span>🔒 Compra 100% segura</span>
+            <span>⭐ +2,800 valoraciones positivas</span>
+            <span>↩️ Devolución fácil</span>
+          </div>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#teclados">← Volver a Teclados Gamer</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function changeImg(thumb, src, alt) {
+      document.getElementById('main-keyboard-img').src = src;
+      document.getElementById('main-keyboard-img').alt = alt;
+      document.querySelectorAll('.k521-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
