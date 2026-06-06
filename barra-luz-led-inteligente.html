@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>Barras de Luz LED Inteligentes RGB | ReviewGamer</title>
+  <meta name="description" content="Análisis de las Barras de Luz LED Inteligentes RGB para escritorio gamer. Sincronización musical, control por app y 16 millones de colores para tu setup.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --led-cyan: #00d4aa;
+      --led-purple: #9b59b6;
+      --led-blue: #3498db;
+      --led-gradient: linear-gradient(135deg, #00d4aa, #9b59b6, #3498db);
+      --led-glow-cyan: rgba(0, 212, 170, 0.4);
+      --led-glow-purple: rgba(155, 89, 182, 0.4);
+    }
+
+    /* ===== HERO ===== */
+    .led-hero {
+      background: linear-gradient(135deg, #020810 0%, #0a0520 40%, #05101a 100%);
+      border-bottom: 2px solid var(--led-cyan);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .led-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 25% 50%, rgba(0,212,170,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 75% 50%, rgba(155,89,182,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .led-hero-badge {
+      display: inline-block;
+      background: var(--led-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px var(--led-glow-cyan);
+    }
+    .led-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--led-cyan) 0%, #fff 40%, var(--led-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.6rem;
+      line-height: 1.15;
+    }
+    .led-hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA ===== */
+    .led-gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .led-img-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(0,212,170,0.25);
+      background: linear-gradient(145deg, #0a0520, #020810);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .led-img-card:hover {
+      border-color: var(--led-cyan);
+      transform: scale(1.015);
+    }
+    .led-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .led-img-card:hover img {
+      transform: scale(1.04);
+    }
+    .led-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem 1rem 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--led-cyan);
+      text-transform: uppercase;
+    }
+
+    /* ===== PRECIO ===== */
+    .led-price-section {
+      background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(155,89,182,0.08));
+      border: 1px solid rgba(0,212,170,0.25);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .led-price-left {}
+    .led-price-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+    .led-price-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .led-price-right {
+      text-align: right;
+    }
+    .led-price-old {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .led-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--led-cyan);
+      text-shadow: 0 0 25px var(--led-glow-cyan);
+    }
+    .led-price-discount {
+      display: inline-block;
+      background: var(--led-gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FEATURES ===== */
+    .led-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .led-feature-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .led-feature-card:hover {
+      border-color: rgba(0,212,170,0.4);
+      background: rgba(0,212,170,0.04);
+      transform: translateY(-3px);
+    }
+    .led-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .led-feature-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: #fff;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .led-feature-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ===== SPECS ===== */
+    .led-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .led-specs-header {
+      background: linear-gradient(90deg, rgba(0,212,170,0.18), rgba(155,89,182,0.1), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--led-cyan);
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .led-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .led-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .led-specs tr:last-child { border-bottom: none; }
+    .led-specs tr:hover { background: rgba(0,212,170,0.04); }
+    .led-specs th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      width: 42%;
+    }
+    .led-specs td {
+      padding: 0.75rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* ===== CTA AMAZON ===== */
+    .led-cta {
+      background: linear-gradient(135deg, #0a0520, #020810);
+      border: 1.5px solid rgba(0,212,170,0.35);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .led-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 60% at 30% 100%, rgba(0,212,170,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 70% 100%, rgba(155,89,182,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .led-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .led-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .btn-amazon-led {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--led-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--led-glow-cyan), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .btn-amazon-led:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--led-glow-cyan), 0 0 30px var(--led-glow-purple), 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+    .led-trust {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .led-trust span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ===== REVIEWS ===== */
+    .led-review-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--led-cyan);
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 0.85rem;
+      transition: background 0.2s, border-left-color 0.3s;
+    }
+    .led-review-card:hover {
+      background: rgba(0,212,170,0.04);
+      border-left-color: var(--led-purple);
+    }
+    .led-review-stars { color: #f4a261; font-size: 0.88rem; margin-bottom: 0.35rem; }
+    .led-review-card .review-text { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin: 0 0 0.4rem; font-style: italic; line-height: 1.6; }
+    .led-review-card .reviewer-name { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* ===== SCORES ===== */
+    .led-score-wrap { margin-bottom: 0.9rem; }
+    .led-score-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.3rem;
+    }
+    .led-score-label span:last-child { color: #fff; font-weight: 600; }
+    .led-score-track {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .led-score-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: var(--led-gradient);
+      transition: width 1.2s ease;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .led-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .led-section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .led-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,212,170,0.3), transparent);
+    }
+
+    /* ===== PRO / CON ===== */
+    .led-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .led-verdict-box {
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+    }
+    .led-verdict-pro {
+      background: rgba(0,212,170,0.05);
+      border: 1px solid rgba(0,212,170,0.2);
+    }
+    .led-verdict-con {
+      background: rgba(155,89,182,0.05);
+      border: 1px solid rgba(155,89,182,0.2);
+    }
+    .led-verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .led-verdict-pro h4 { color: var(--led-cyan); }
+    .led-verdict-con h4 { color: var(--led-purple); }
+    .led-verdict-box ul { list-style: none; padding: 0; margin: 0; }
+    .led-verdict-box ul li {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .led-verdict-pro ul li::before { content: '✓'; color: var(--led-cyan); font-weight: 700; flex-shrink: 0; }
+    .led-verdict-con ul li::before { content: '✗'; color: var(--led-purple); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .led-gallery-grid { grid-template-columns: 1fr; }
+      .led-features { grid-template-columns: repeat(2, 1fr); }
+      .led-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .led-hero h1 { font-size: 1.5rem; }
+      .led-features { grid-template-columns: 1fr; }
+      .led-price-section { flex-direction: column; align-items: flex-start; }
+      .led-price-right { text-align: left; }
+      .led-price-tag { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#lifestyle">Lifestyle & Setup</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="led-hero">
+    <div class="container">
+      <div class="led-hero-badge">💡 Iluminación Inteligente · RGB Escritorio</div>
+      <h1>Barras de Luz LED<br>Inteligentes RGB</h1>
+      <p class="led-hero-sub">Iluminación ambiental con sincronización musical, control por app y 16 millones de colores para transformar tu setup gamer</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 1100px;">
+
+        <!-- ===== GALERÍA ===== -->
+        <div class="led-gallery-grid">
+          <div class="led-img-card">
+            <img src="assets/barra-led-setup.jpg" alt="Barras de Luz LED Inteligentes en setup gamer con backlight inmersivo">
+            <div class="led-img-label">Backlight para ambientes inmersivos</div>
+          </div>
+          <div class="led-img-card">
+            <img src="assets/barra-led-caja.jpg" alt="Barras de Luz LED Multicolor paquete de 2 unidades con control remoto y app">
+            <div class="led-img-label">Paquete de 2 unidades + control</div>
+          </div>
+        </div>
+
+        <!-- ===== PRECIO ===== -->
+        <div class="led-price-section">
+          <div class="led-price-left">
+            <h2 class="led-price-name">Barras de Luz LED Inteligentes RGB</h2>
+            <p class="led-price-subtitle">Paquete de 2 Unidades · Sincronización Musical · Control App + Remoto</p>
+          </div>
+          <div class="led-price-right">
+            <div class="led-price-old">$52.99 USD</div>
+            <div class="led-price-tag">$34.99</div>
+            <div class="led-price-discount">34% OFF</div>
+          </div>
+        </div>
+
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <div style="margin-bottom: 2.5rem;">
+          <p style="color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.8;">
+            Las <strong style="color:#fff;">Barras de Luz LED Inteligentes</strong> transforman cualquier escritorio en un setup gaming de nivel profesional. Con sincronización musical que reacciona al ritmo de tu música y juegos, control inteligente vía app Bluetooth y un control remoto incluido. Paquete de 2 barras con más de <strong style="color: var(--led-cyan);">16 millones de colores</strong> y múltiples efectos ambientales dinámicos.
+          </p>
+        </div>
+
+        <!-- ===== CARACTERÍSTICAS ===== -->
+        <div class="led-section-title">
+          <h2>⚡ CARACTERÍSTICAS PRINCIPALES</h2>
+        </div>
+        <div class="led-features">
+          <div class="led-feature-card">
+            <span class="led-feature-icon">🎵</span>
+            <h4>Sincronización Musical</h4>
+            <p>Las luces reaccionan al ritmo de tu música y efectos de juegos en tiempo real</p>
+          </div>
+          <div class="led-feature-card">
+            <span class="led-feature-icon">📱</span>
+            <h4>Control por App</h4>
+            <p>Personaliza colores, modos y brillo desde tu smartphone vía Bluetooth</p>
+          </div>
+          <div class="led-feature-card">
+            <span class="led-feature-icon">🌈</span>
+            <h4>16M de Colores</h4>
+            <p>16.8 millones de colores RGB para crear la atmósfera perfecta</p>
+          </div>
+          <div class="led-feature-card">
+            <span class="led-feature-icon">🎮</span>
+            <h4>Control Remoto</h4>
+            <p>Control IR incluido con acceso rápido a modos y ajustes de color</p>
+          </div>
+          <div class="led-feature-card">
+            <span class="led-feature-icon">💡</span>
+            <h4>Múltiples Efectos</h4>
+            <p>Efectos dinámicos: respiración, arcoíris, ola, flash, degradado y más</p>
+          </div>
+          <div class="led-feature-card">
+            <span class="led-feature-icon">🔌</span>
+            <h4>Fácil Instalación</h4>
+            <p>Alimentación USB, base magnética estable. Listas en segundos</p>
+          </div>
+        </div>
+
+        <!-- ===== BOTÓN AMAZON ===== -->
+        <div class="led-cta">
+          <h3>🛒 ¿Listo para transformar tu setup?</h3>
+          <p>Disponible en Amazon México con envío rápido y garantía de devolución</p>
+          <a href="https://www.amazon.com.mx/Iluminación-Inteligente-Escritorio-Sincronización-Ambientales/dp/B0G7ZQJZT5" target="_blank" rel="noopener noreferrer" class="btn-amazon-led">
+            🛒 Comprar en Amazon México
+          </a>
+          <div class="led-trust">
+            <span>🚚 Envío rápido disponible</span>
+            <span>🔒 Pago 100% seguro</span>
+            <span>↩️ Devolución 30 días</span>
+            <span>✅ Vendido por Amazon</span>
+          </div>
+        </div>
+
+        <!-- ===== ESPECIFICACIONES ===== -->
+        <div class="led-section-title">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="led-specs">
+          <div class="led-specs-header">FICHA TÉCNICA COMPLETA</div>
+          <table>
+            <tr>
+              <th scope="row">Producto</th>
+              <td>Barras de Luz LED Inteligentes RGB</td>
+            </tr>
+            <tr>
+              <th scope="row">Cantidad</th>
+              <td>Paquete de 2 unidades</td>
+            </tr>
+            <tr>
+              <th scope="row">Iluminación</th>
+              <td>RGB 16.8 millones de colores</td>
+            </tr>
+            <tr>
+              <th scope="row">Conectividad</th>
+              <td>Bluetooth (App) + Control Remoto IR</td>
+            </tr>
+            <tr>
+              <th scope="row">Sincronización</th>
+              <td>Musical en tiempo real</td>
+            </tr>
+            <tr>
+              <th scope="row">Alimentación</th>
+              <td>USB 5V (cable incluido)</td>
+            </tr>
+            <tr>
+              <th scope="row">Efectos de luz</th>
+              <td>Múltiples modos dinámicos</td>
+            </tr>
+            <tr>
+              <th scope="row">Instalación</th>
+              <td>Base magnética / De pie</td>
+            </tr>
+            <tr>
+              <th scope="row">Compatibilidad App</th>
+              <td>iOS / Android</td>
+            </tr>
+            <tr>
+              <th scope="row">Brillo ajustable</th>
+              <td>Sí (desde app y control remoto)</td>
+            </tr>
+            <tr>
+              <th scope="row">Material</th>
+              <td>Policarbonato difusor + ABS</td>
+            </tr>
+            <tr>
+              <th scope="row">Uso recomendado</th>
+              <td>Escritorio / Gaming / Streaming / Decoración</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ===== PUNTUACIONES ===== -->
+        <div class="led-section-title">
+          <h2>📊 PUNTUACIONES</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 1.8rem; margin-bottom: 2.5rem;">
+          <div class="led-score-wrap">
+            <div class="led-score-label"><span>Calidad de iluminación RGB</span><span>9.4 / 10</span></div>
+            <div class="led-score-track"><div class="led-score-fill" style="width: 94%"></div></div>
+          </div>
+          <div class="led-score-wrap">
+            <div class="led-score-label"><span>Sincronización musical</span><span>8.8 / 10</span></div>
+            <div class="led-score-track"><div class="led-score-fill" style="width: 88%"></div></div>
+          </div>
+          <div class="led-score-wrap">
+            <div class="led-score-label"><span>Facilidad de uso</span><span>9.0 / 10</span></div>
+            <div class="led-score-track"><div class="led-score-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="led-score-wrap">
+            <div class="led-score-label"><span>Calidad / Precio</span><span>9.3 / 10</span></div>
+            <div class="led-score-track"><div class="led-score-fill" style="width: 93%"></div></div>
+          </div>
+          <div class="led-score-wrap">
+            <div class="led-score-label"><span>Diseño y estética</span><span>9.5 / 10</span></div>
+            <div class="led-score-track"><div class="led-score-fill" style="width: 95%"></div></div>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 3px; margin-bottom: 0.4rem;">PUNTAJE REVIEWGAMER</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 700; background: var(--led-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 20px var(--led-glow-cyan));">9.2<span style="font-size: 1.5rem; opacity: 0.4">/10</span></div>
+          </div>
+        </div>
+
+        <!-- ===== PROS Y CONTRAS ===== -->
+        <div class="led-section-title">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="led-verdict">
+          <div class="led-verdict-box led-verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>Iluminación RGB espectacular y muy brillante</li>
+              <li>Sincronización musical que reacciona perfectamente</li>
+              <li>App intuitiva con muchos modos de color</li>
+              <li>Control remoto incluido para uso rápido</li>
+              <li>Instalación en segundos vía USB</li>
+              <li>Excelente relación calidad-precio</li>
+            </ul>
+          </div>
+          <div class="led-verdict-box led-verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>La app puede tardar en conectar por primera vez</li>
+              <li>No compatible con asistentes de voz (Alexa/Google)</li>
+              <li>Cable USB algo corto para algunos setups</li>
+              <li>Sin opción WiFi, solo Bluetooth</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== RESEÑAS ===== -->
+        <div class="led-section-title">
+          <h2>💬 RESEÑAS DE USUARIOS AMAZON</h2>
+        </div>
+        <div style="margin-bottom: 2.5rem;">
+          <div class="led-review-card">
+            <div class="led-review-stars">★★★★★</div>
+            <p class="review-text">"Son increíbles. Las puse a los lados de mi monitor y el efecto de backlight es impresionante. La sincronización con la música en Spotify funciona de maravilla. Mi setup se ve nivel streamer profesional."</p>
+            <div class="reviewer-name">— Diego V. ✅ Compra Verificada · Amazon México</div>
+          </div>
+          <div class="led-review-card">
+            <div class="led-review-stars">★★★★½</div>
+            <p class="review-text">"Súper fácil de instalar, las conectas por USB y listo. La app tiene muchos modos de colores. Lo único es que el Bluetooth tarda un poco en conectar la primera vez, después todo fluido. 100% recomendadas."</p>
+            <div class="reviewer-name">— Fernanda L. ✅ Compra Verificada · Amazon México</div>
+          </div>
+          <div class="led-review-card">
+            <div class="led-review-stars">★★★★★</div>
+            <p class="review-text">"Las compré para mi cuarto de gaming y transformaron todo el ambiente. Los colores son muy vivos y el modo arcoíris es espectacular. El control remoto es muy práctico para cambiar modos rápido."</p>
+            <div class="reviewer-name">— Marcos G. ✅ Compra Verificada · Amazon México</div>
+          </div>
+        </div>
+
+        <!-- ===== CTA FINAL ===== -->
+        <div class="led-cta">
+          <h3>💡 Transforma tu setup con iluminación inteligente</h3>
+          <p>Barras de Luz LED Inteligentes RGB disponibles en Amazon México con el mejor precio</p>
+          <a href="https://www.amazon.com.mx/Iluminación-Inteligente-Escritorio-Sincronización-Ambientales/dp/B0G7ZQJZT5" target="_blank" rel="noopener noreferrer" class="btn-amazon-led">
+            🛒 Ver en Amazon — $34.99 USD
+          </a>
+          <div class="led-trust">
+            <span>🚚 Envío rápido</span>
+            <span>🔒 Compra segura</span>
+            <span>⭐ Producto bien valorado</span>
+            <span>↩️ Devolución fácil</span>
+          </div>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#lifestyle">← Volver a Lifestyle & Setup</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
