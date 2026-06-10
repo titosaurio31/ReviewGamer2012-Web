@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>HUANUO Brazo para Monitor Ultra Ancho | ReviewGamer</title>
+  <meta name="description" content="Análisis del brazo para monitor de escritorio HUANUO Heavy Duty. Soporte robusto ideal para pantallas ultra anchas, con resorte de gas y gestión de cables.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --arm-steel: #8a9ba8;
+      --arm-accent: #00b4d8;
+      --arm-dark: #121417;
+      --arm-gradient: linear-gradient(135deg, #00b4d8, #0077b6);
+      --arm-glow: rgba(0, 180, 216, 0.35);
+    }
+
+    /* ===== HERO ===== */
+    .arm-hero {
+      background: linear-gradient(135deg, #0d0f12 0%, #171a1f 40%, #0d0f12 100%);
+      border-bottom: 2px solid var(--arm-accent);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .arm-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(0,180,216,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .arm-hero-badge {
+      display: inline-block;
+      background: var(--arm-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px var(--arm-glow);
+    }
+    .arm-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff 0%, var(--arm-steel) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.6rem;
+      line-height: 1.15;
+    }
+    .arm-hero-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA ===== */
+    .arm-gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .arm-img-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(138,155,168,0.2);
+      background: linear-gradient(145deg, #171a1f, #0d0f12);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .arm-img-card:hover {
+      border-color: var(--arm-accent);
+      transform: scale(1.015);
+    }
+    .arm-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .arm-img-card:hover img {
+      transform: scale(1.04);
+    }
+    .arm-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem 1rem 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--arm-accent);
+      text-transform: uppercase;
+    }
+
+    /* ===== PRECIO ===== */
+    .arm-price-section {
+      background: linear-gradient(135deg, rgba(0,180,216,0.08), rgba(138,155,168,0.05));
+      border: 1px solid rgba(138,155,168,0.25);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .arm-price-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+    .arm-price-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .arm-price-right {
+      text-align: right;
+    }
+    .arm-price-old {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .arm-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--arm-accent);
+      text-shadow: 0 0 25px var(--arm-glow);
+    }
+    .arm-price-discount {
+      display: inline-block;
+      background: var(--arm-gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FEATURES ===== */
+    .arm-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .arm-feature-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .arm-feature-card:hover {
+      border-color: rgba(0,180,216,0.4);
+      background: rgba(0,180,216,0.04);
+      transform: translateY(-3px);
+    }
+    .arm-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .arm-feature-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: #fff;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .arm-feature-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ===== SPECS ===== */
+    .arm-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .arm-specs-header {
+      background: linear-gradient(90deg, rgba(0,180,216,0.15), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--arm-accent);
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .arm-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .arm-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .arm-specs tr:last-child { border-bottom: none; }
+    .arm-specs tr:hover { background: rgba(0,180,216,0.04); }
+    .arm-specs th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      width: 42%;
+    }
+    .arm-specs td {
+      padding: 0.75rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* ===== CTA AMAZON ===== */
+    .arm-cta {
+      background: linear-gradient(135deg, #171a1f, #0d0f12);
+      border: 1.5px solid rgba(0,180,216,0.3);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .arm-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 60% at 50% 100%, rgba(0,180,216,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .arm-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .arm-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .btn-amazon-arm {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--arm-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--arm-glow), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .btn-amazon-arm:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--arm-glow), 0 0 30px rgba(0,119,182,0.5), 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+    .arm-trust {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .arm-trust span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ===== SCORES ===== */
+    .arm-score-wrap { margin-bottom: 0.9rem; }
+    .arm-score-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.3rem;
+    }
+    .arm-score-label span:last-child { color: #fff; font-weight: 600; }
+    .arm-score-track {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .arm-score-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: var(--arm-gradient);
+      transition: width 1.2s ease;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .arm-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .arm-section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .arm-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(138,155,168,0.3), transparent);
+    }
+
+    /* ===== PRO / CON ===== */
+    .arm-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .arm-verdict-box {
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+    }
+    .arm-verdict-pro {
+      background: rgba(0,180,216,0.05);
+      border: 1px solid rgba(0,180,216,0.2);
+    }
+    .arm-verdict-con {
+      background: rgba(138,155,168,0.05);
+      border: 1px solid rgba(138,155,168,0.2);
+    }
+    .arm-verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .arm-verdict-pro h4 { color: var(--arm-accent); }
+    .arm-verdict-con h4 { color: var(--arm-steel); }
+    .arm-verdict-box ul { list-style: none; padding: 0; margin: 0; }
+    .arm-verdict-box ul li {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .arm-verdict-pro ul li::before { content: '✓'; color: var(--arm-accent); font-weight: 700; flex-shrink: 0; }
+    .arm-verdict-con ul li::before { content: '✗'; color: var(--arm-steel); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .arm-gallery-grid { grid-template-columns: 1fr; }
+      .arm-features { grid-template-columns: repeat(2, 1fr); }
+      .arm-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .arm-hero h1 { font-size: 1.5rem; }
+      .arm-features { grid-template-columns: 1fr; }
+      .arm-price-section { flex-direction: column; align-items: flex-start; }
+      .arm-price-right { text-align: left; }
+      .arm-price-tag { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#productividad">Productividad & Audio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="arm-hero">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="arm-hero-badge">🦾 Soporte Heavy Duty</div>
+      <h1>HUANUO Monitor Arm<br>Ultra-Ancho</h1>
+      <p class="arm-hero-sub">Libera espacio en tu escritorio y encuentra la ergonomía perfecta. Un brazo diseñado específicamente para soportar el peso de monitores gaming ultra-anchos.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 1100px;">
+
+        <!-- ===== GALERÍA ===== -->
+        <div class="arm-gallery-grid">
+          <div class="arm-img-card">
+            <img src="assets/huanuo-arm-main.png" alt="Brazo HUANUO sosteniendo monitor ultrawide">
+            <div class="arm-img-label">Soporte Inquebrantable para Ultrawide</div>
+          </div>
+          <div class="arm-img-card">
+            <img src="assets/huanuo-arm-setup.png" alt="Detalle de la base y abrazadera en el escritorio">
+            <div class="arm-img-label">Base Reforzada con Gestión de Cables</div>
+          </div>
+        </div>
+
+        <!-- ===== PRECIO ===== -->
+        <div class="arm-price-section">
+          <div class="arm-price-left">
+            <h2 class="arm-price-name">HUANUO Heavy Duty Monitor Arm</h2>
+            <p class="arm-price-subtitle">Resorte de Gas · Para Monitores 22" a 35" · Hasta 12 kg (26.4 lbs)</p>
+          </div>
+          <div class="arm-price-right">
+            <div class="arm-price-old">$129.99 USD</div>
+            <div class="arm-price-tag">$99.99</div>
+            <div class="arm-price-discount">23% OFF</div>
+          </div>
+        </div>
+
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <div style="margin-bottom: 2.5rem;">
+          <p style="color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.8;">
+            El mayor problema de comprar un monitor curvo ultra-ancho es que sus bases ocupan la mitad del escritorio. El <strong style="color:#fff;">Brazo HUANUO Heavy Duty</strong> resuelve esto con un sistema de resorte de gas premium capaz de sostener monitores grandes sin que se caigan hacia adelante. Construido en aluminio espacial, ofrece una estética profesional y resistencia nivel industrial.
+          </p>
+        </div>
+
+        <!-- ===== CARACTERÍSTICAS ===== -->
+        <div class="arm-section-title">
+          <h2>⚡ CARACTERÍSTICAS TÉCNICAS</h2>
+        </div>
+        <div class="arm-features">
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">🏋️</span>
+            <h4>Alta Capacidad</h4>
+            <p>Soporta pantallas desde 22 hasta 35 pulgadas y hasta 12 kg (26.4 libras) de peso.</p>
+          </div>
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">🌬️</span>
+            <h4>Resorte de Gas Premium</h4>
+            <p>Mecanismo interno que permite ajustar la altura del monitor con un solo dedo suavemente.</p>
+          </div>
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">🔄</span>
+            <h4>Articulación Completa</h4>
+            <p>Rotación 360°, inclinación de +85° a -30° y giro de 90° para máxima ergonomía.</p>
+          </div>
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">🗜️</span>
+            <h4>Dos Opciones de Montaje</h4>
+            <p>Incluye abrazadera en "C" para el borde del escritorio y base para agujero pasacables.</p>
+          </div>
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">🔌</span>
+            <h4>Gestión de Cables</h4>
+            <p>Canales ocultos a lo largo de los brazos para mantener tu setup limpio y libre de enredos.</p>
+          </div>
+          <div class="arm-feature-card">
+            <span class="arm-feature-icon">📺</span>
+            <h4>Placa VESA Extraíble</h4>
+            <p>Compatible con VESA 75x75mm y 100x100mm con un sistema de fácil acople.</p>
+          </div>
+        </div>
+
+        <!-- ===== BOTÓN AMAZON ===== -->
+        <div class="arm-cta">
+          <h3>🛒 Recupera el espacio de tu escritorio</h3>
+          <p>Encuentra este brazo Heavy Duty en Amazon con envío rápido</p>
+          <a href="https://www.amazon.com/-/es/HUANUO-resistente-ultraanchas-ultraancho-escritorio/dp/B0DRY55BKD" target="_blank" rel="noopener noreferrer" class="btn-amazon-arm">
+            🛒 Comprar en Amazon
+          </a>
+          <div class="arm-trust">
+            <span>🚚 Envío Prime disponible</span>
+            <span>🛡️ Aluminio Grado Aeroespacial</span>
+            <span>⭐ Alta valoración de usuarios</span>
+          </div>
+        </div>
+
+        <!-- ===== ESPECIFICACIONES ===== -->
+        <div class="arm-section-title">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="arm-specs">
+          <div class="arm-specs-header">FICHA TÉCNICA HUANUO HEAVY DUTY</div>
+          <table>
+            <tr>
+              <th scope="row">Modelo</th>
+              <td>Brazo individual con resorte de gas</td>
+            </tr>
+            <tr>
+              <th scope="row">Tamaño de pantalla compatible</th>
+              <td>22" a 35" pulgadas (Ultrawide soportado)</td>
+            </tr>
+            <tr>
+              <th scope="row">Capacidad de peso</th>
+              <td>3.0 kg a 12.0 kg (6.6 a 26.4 lbs)</td>
+            </tr>
+            <tr>
+              <th scope="row">Compatibilidad VESA</th>
+              <td>75x75 mm / 100x100 mm</td>
+            </tr>
+            <tr>
+              <th scope="row">Ajuste de Altura Máxima</th>
+              <td>Hasta 53.3 cm (21 pulgadas)</td>
+            </tr>
+            <tr>
+              <th scope="row">Extensión Máxima</th>
+              <td>Hasta 65 cm (25.6 pulgadas) hacia adelante</td>
+            </tr>
+            <tr>
+              <th scope="row">Grosor de escritorio (Abrazadera)</th>
+              <td>0.99 cm a 9.0 cm (0.39" a 3.54")</td>
+            </tr>
+            <tr>
+              <th scope="row">Materiales</th>
+              <td>Aluminio, Acero, Plástico de alta resistencia</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ===== PUNTUACIONES ===== -->
+        <div class="arm-section-title">
+          <h2>📊 PUNTUACIONES</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 1.8rem; margin-bottom: 2.5rem;">
+          <div class="arm-score-wrap">
+            <div class="arm-score-label"><span>Robustez y Estabilidad</span><span>9.6 / 10</span></div>
+            <div class="arm-score-track"><div class="arm-score-fill" style="width: 96%"></div></div>
+          </div>
+          <div class="arm-score-wrap">
+            <div class="arm-score-label"><span>Facilidad de Movimiento</span><span>9.0 / 10</span></div>
+            <div class="arm-score-track"><div class="arm-score-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="arm-score-wrap">
+            <div class="arm-score-label"><span>Instalación</span><span>8.5 / 10</span></div>
+            <div class="arm-score-track"><div class="arm-score-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="arm-score-wrap">
+            <div class="arm-score-label"><span>Gestión de Cables</span><span>8.0 / 10</span></div>
+            <div class="arm-score-track"><div class="arm-score-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="arm-score-wrap">
+            <div class="arm-score-label"><span>Relación Calidad/Precio</span><span>9.5 / 10</span></div>
+            <div class="arm-score-track"><div class="arm-score-fill" style="width: 95%"></div></div>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 3px; margin-bottom: 0.4rem;">PUNTAJE REVIEWGAMER</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 700; background: var(--arm-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 20px rgba(0,180,216,0.5));">8.9<span style="font-size: 1.5rem; opacity: 0.4">/10</span></div>
+          </div>
+        </div>
+
+        <!-- ===== PROS Y CONTRAS ===== -->
+        <div class="arm-section-title">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="arm-verdict">
+          <div class="arm-verdict-box arm-verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>El pivote no cede bajo el peso de monitores ultra-anchos pesados</li>
+              <li>El sistema de gas es muy suave una vez ajustado a la tensión correcta</li>
+              <li>Base de abrazadera de doble tornillo súper segura</li>
+              <li>Cuesta una fracción de lo que valen los brazos Ergotron</li>
+            </ul>
+          </div>
+          <div class="arm-verdict-box arm-verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>Las tapas plásticas para ocultar cables se sienten un poco frágiles</li>
+              <li>Ajustar la tensión inicial del resorte requiere mucha fuerza y dar varias vueltas</li>
+              <li>Necesita un escritorio robusto; puede dañar mesas de cartón prensado (IKEA LINNMON)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== CTA FINAL ===== -->
+        <div class="arm-cta">
+          <h3>💡 Ergonomía y Estética Profesional</h3>
+          <p>Mejora tu postura y tu setup con el brazo para monitor HUANUO</p>
+          <a href="https://www.amazon.com/-/es/HUANUO-resistente-ultraanchas-ultraancho-escritorio/dp/B0DRY55BKD" target="_blank" rel="noopener noreferrer" class="btn-amazon-arm">
+            🛒 Ver precio en Amazon
+          </a>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#productividad">← Volver a Productividad & Audio</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
