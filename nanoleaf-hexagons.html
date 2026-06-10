@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>Nanoleaf Shapes Hexagons | ReviewGamer</title>
+  <meta name="description" content="Análisis de los paneles Nanoleaf Shapes Hexagons (13 Paneles). Iluminación inteligente modular con sincronización musical, reactividad táctil y 16M de colores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --nano-pink: #FF007F;
+      --nano-cyan: #00FFFF;
+      --nano-yellow: #FFEA00;
+      --nano-gradient: linear-gradient(135deg, #FF007F, #00FFFF, #FFEA00);
+      --nano-glow-pink: rgba(255, 0, 127, 0.4);
+      --nano-glow-cyan: rgba(0, 255, 255, 0.4);
+    }
+
+    /* ===== HERO ===== */
+    .nano-hero {
+      background: linear-gradient(135deg, #0a0510 0%, #051015 40%, #0a0a0a 100%);
+      border-bottom: 2px solid var(--nano-cyan);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .nano-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 25% 50%, rgba(255,0,127,0.1) 0%, transparent 60%),
+        radial-gradient(circle at 75% 50%, rgba(0,255,255,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Añadimos hexágonos de fondo flotantes para la temática */
+    .hex-bg {
+      position: absolute;
+      width: 100px;
+      height: 115px;
+      background: rgba(255,255,255,0.02);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      pointer-events: none;
+    }
+    .nano-hero-badge {
+      display: inline-block;
+      background: var(--nano-gradient);
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px var(--nano-glow-cyan);
+    }
+    .nano-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff 0%, var(--nano-cyan) 50%, var(--nano-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.6rem;
+      line-height: 1.15;
+    }
+    .nano-hero-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA ===== */
+    .nano-gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .nano-img-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(0,255,255,0.25);
+      background: linear-gradient(145deg, #051015, #0a0510);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .nano-img-card:hover {
+      border-color: var(--nano-cyan);
+      transform: scale(1.015);
+    }
+    .nano-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .nano-img-card:hover img {
+      transform: scale(1.04);
+    }
+    .nano-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem 1rem 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--nano-cyan);
+      text-transform: uppercase;
+    }
+
+    /* ===== PRECIO ===== */
+    .nano-price-section {
+      background: linear-gradient(135deg, rgba(0,255,255,0.08), rgba(255,0,127,0.08));
+      border: 1px solid rgba(0,255,255,0.25);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .nano-price-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+    .nano-price-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .nano-price-right {
+      text-align: right;
+    }
+    .nano-price-old {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .nano-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--nano-cyan);
+      text-shadow: 0 0 25px var(--nano-glow-cyan);
+    }
+    .nano-price-discount {
+      display: inline-block;
+      background: var(--nano-gradient);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FEATURES ===== */
+    .nano-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .nano-feature-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .nano-feature-card:hover {
+      border-color: rgba(255,0,127,0.4);
+      background: rgba(255,0,127,0.04);
+      transform: translateY(-3px);
+    }
+    .nano-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .nano-feature-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: #fff;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .nano-feature-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ===== SPECS ===== */
+    .nano-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .nano-specs-header {
+      background: linear-gradient(90deg, rgba(0,255,255,0.18), rgba(255,0,127,0.1), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--nano-cyan);
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nano-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .nano-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .nano-specs tr:last-child { border-bottom: none; }
+    .nano-specs tr:hover { background: rgba(0,255,255,0.04); }
+    .nano-specs th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      width: 42%;
+    }
+    .nano-specs td {
+      padding: 0.75rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* ===== CTA AMAZON ===== */
+    .nano-cta {
+      background: linear-gradient(135deg, #051015, #0a0510);
+      border: 1.5px solid rgba(0,255,255,0.35);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .nano-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 60% at 30% 100%, rgba(0,255,255,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 70% 100%, rgba(255,0,127,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .nano-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .nano-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .btn-amazon-nano {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--nano-gradient);
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--nano-glow-cyan), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .btn-amazon-nano:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--nano-glow-cyan), 0 0 30px var(--nano-glow-pink), 0 8px 30px rgba(0,0,0,0.5);
+      color: #000;
+    }
+    .nano-trust {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .nano-trust span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ===== REVIEWS ===== */
+    .nano-review-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--nano-pink);
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 0.85rem;
+      transition: background 0.2s, border-left-color 0.3s;
+    }
+    .nano-review-card:hover {
+      background: rgba(255,0,127,0.04);
+      border-left-color: var(--nano-cyan);
+    }
+    .nano-review-stars { color: #FFEA00; font-size: 0.88rem; margin-bottom: 0.35rem; }
+    .nano-review-card .review-text { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin: 0 0 0.4rem; font-style: italic; line-height: 1.6; }
+    .nano-review-card .reviewer-name { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* ===== SCORES ===== */
+    .nano-score-wrap { margin-bottom: 0.9rem; }
+    .nano-score-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.3rem;
+    }
+    .nano-score-label span:last-child { color: #fff; font-weight: 600; }
+    .nano-score-track {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .nano-score-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: var(--nano-gradient);
+      transition: width 1.2s ease;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .nano-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .nano-section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .nano-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,255,255,0.3), transparent);
+    }
+
+    /* ===== PRO / CON ===== */
+    .nano-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .nano-verdict-box {
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+    }
+    .nano-verdict-pro {
+      background: rgba(0,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.2);
+    }
+    .nano-verdict-con {
+      background: rgba(255,0,127,0.05);
+      border: 1px solid rgba(255,0,127,0.2);
+    }
+    .nano-verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .nano-verdict-pro h4 { color: var(--nano-cyan); }
+    .nano-verdict-con h4 { color: var(--nano-pink); }
+    .nano-verdict-box ul { list-style: none; padding: 0; margin: 0; }
+    .nano-verdict-box ul li {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .nano-verdict-pro ul li::before { content: '✓'; color: var(--nano-cyan); font-weight: 700; flex-shrink: 0; }
+    .nano-verdict-con ul li::before { content: '✗'; color: var(--nano-pink); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nano-gallery-grid { grid-template-columns: 1fr; }
+      .nano-features { grid-template-columns: repeat(2, 1fr); }
+      .nano-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nano-hero h1 { font-size: 1.5rem; }
+      .nano-features { grid-template-columns: 1fr; }
+      .nano-price-section { flex-direction: column; align-items: flex-start; }
+      .nano-price-right { text-align: left; }
+      .nano-price-tag { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#lifestyle">Lifestyle & Setup</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="nano-hero">
+    <!-- Floating Hexagons for effect -->
+    <div class="hex-bg" style="top: 10%; left: 10%; transform: rotate(15deg);"></div>
+    <div class="hex-bg" style="top: 60%; left: 85%; transform: rotate(-10deg);"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="nano-hero-badge">🔺 Iluminación Modular Inteligente</div>
+      <h1>Nanoleaf Shapes<br>Hexagons (13 Pack)</h1>
+      <p class="nano-hero-sub">Transforma tu pared en una obra de arte interactiva con paneles modulares sensibles al tacto y sincronización musical 100% inmersiva.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 1100px;">
+
+        <!-- ===== GALERÍA ===== -->
+        <div class="nano-gallery-grid">
+          <div class="nano-img-card">
+            <img src="assets/nanoleaf-main.png" alt="Nanoleaf Shapes Hexagons en un setup gamer">
+            <div class="nano-img-label">Setup Gamer Premium con Nanoleaf</div>
+          </div>
+          <div class="nano-img-card">
+            <img src="assets/nanoleaf-setup.png" alt="Detalle de colores y módulos de Nanoleaf Hexagons">
+            <div class="nano-img-label">Detalle RGB Dinámico</div>
+          </div>
+        </div>
+
+        <!-- ===== PRECIO ===== -->
+        <div class="nano-price-section">
+          <div class="nano-price-left">
+            <h2 class="nano-price-name">Nanoleaf Shapes Hexagons Smarter Kit</h2>
+            <p class="nano-price-subtitle">Kit de 13 Paneles · Reacciona al Tacto · Screen Mirroring</p>
+          </div>
+          <div class="nano-price-right">
+            <div class="nano-price-old">$249.99 USD</div>
+            <div class="nano-price-tag">$199.99</div>
+            <div class="nano-price-discount">20% OFF</div>
+          </div>
+        </div>
+
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <div style="margin-bottom: 2.5rem;">
+          <p style="color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.8;">
+            El <strong style="color:#fff;">Smarter Kit de 13 Paneles Hexagonales de Nanoleaf Shapes</strong> es la máxima expresión de personalización para setups gamers y cuartos de streaming. Más que simples luces, son lienzos modulares interactivos que responden a tu toque, a tu música y a los colores de tu monitor a través de la función Screen Mirror. Crea tu propio diseño geométrico y da vida a tu espacio.
+          </p>
+        </div>
+
+        <!-- ===== CARACTERÍSTICAS ===== -->
+        <div class="nano-section-title">
+          <h2>⚡ CARACTERÍSTICAS INNOVADORAS</h2>
+        </div>
+        <div class="nano-features">
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">🧩</span>
+            <h4>Diseño Modular</h4>
+            <p>Conecta paneles usando Connect+ para crear diseños geométricos únicos en tu pared.</p>
+          </div>
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">👆</span>
+            <h4>Sensibles al Tacto</h4>
+            <p>Controla la luz o juega juegos interactivos directamente tocando los paneles.</p>
+          </div>
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">🎵</span>
+            <h4>Rhythm Module</h4>
+            <p>Sincronización musical integrada. Observa cómo tus luces bailan al ritmo de tus playlists.</p>
+          </div>
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">🖥️</span>
+            <h4>Screen Mirror</h4>
+            <p>La iluminación de tu pantalla se refleja en tus paneles para una experiencia de juego épica.</p>
+          </div>
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">🌐</span>
+            <h4>Smart Home App</h4>
+            <p>Compatible con Apple HomeKit, Amazon Alexa, Google Assistant e IFTTT.</p>
+          </div>
+          <div class="nano-feature-card">
+            <span class="nano-feature-icon">🛠️</span>
+            <h4>Montaje sin Taladros</h4>
+            <p>Instalación fácil y rápida usando cinta adhesiva de doble cara incluida.</p>
+          </div>
+        </div>
+
+        <!-- ===== BOTÓN AMAZON ===== -->
+        <div class="nano-cta">
+          <h3>🛒 Diseña tu propia iluminación inteligente</h3>
+          <p>Encuentra este paquete de 13 paneles Hexagonales al mejor precio</p>
+          <a href="https://www.amazon.com/-/es/Nanoleaf-Hexágonos-formas-13-paneles/dp/B09B2XJWCY" target="_blank" rel="noopener noreferrer" class="btn-amazon-nano">
+            🛒 Comprar en Amazon
+          </a>
+          <div class="nano-trust">
+            <span>🚚 Envío Prime disponible</span>
+            <span>🔒 Garantía Oficial Nanoleaf</span>
+            <span>⭐ +1,000 reseñas globales</span>
+          </div>
+        </div>
+
+        <!-- ===== ESPECIFICACIONES ===== -->
+        <div class="nano-section-title">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="nano-specs">
+          <div class="nano-specs-header">FICHA TÉCNICA NANOLEAF HEXAGONS</div>
+          <table>
+            <tr>
+              <th scope="row">Producto</th>
+              <td>Nanoleaf Shapes Hexagons Smarter Kit (13 Paneles)</td>
+            </tr>
+            <tr>
+              <th scope="row">Dimensiones por Panel</th>
+              <td>20 cm (Alto) x 23 cm (Ancho)</td>
+            </tr>
+            <tr>
+              <th scope="row">Peso por Panel</th>
+              <td>208 gramos</td>
+            </tr>
+            <tr>
+              <th scope="row">Luminosidad por Panel</th>
+              <td>100 lúmenes</td>
+            </tr>
+            <tr>
+              <th scope="row">Temperatura de color</th>
+              <td>1200K - 6500K</td>
+            </tr>
+            <tr>
+              <th scope="row">Colores RGB</th>
+              <td>16.4 millones de colores</td>
+            </tr>
+            <tr>
+              <th scope="row">Conectividad</th>
+              <td>Wi-Fi (2.4 GHz b/g/n) - NO soporta 5 GHz</td>
+            </tr>
+            <tr>
+              <th scope="row">Paneles Máximos por fuente</th>
+              <td>21 hexágonos por fuente de alimentación de 42W</td>
+            </tr>
+            <tr>
+              <th scope="row">Garantía</th>
+              <td>2 años de garantía del fabricante</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ===== PUNTUACIONES ===== -->
+        <div class="nano-section-title">
+          <h2>📊 PUNTUACIONES</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 1.8rem; margin-bottom: 2.5rem;">
+          <div class="nano-score-wrap">
+            <div class="nano-score-label"><span>Vibración de Color (RGB)</span><span>9.8 / 10</span></div>
+            <div class="nano-score-track"><div class="nano-score-fill" style="width: 98%"></div></div>
+          </div>
+          <div class="nano-score-wrap">
+            <div class="nano-score-label"><span>Personalización de App</span><span>9.5 / 10</span></div>
+            <div class="nano-score-track"><div class="nano-score-fill" style="width: 95%"></div></div>
+          </div>
+          <div class="nano-score-wrap">
+            <div class="nano-score-label"><span>Sincronización PC/Juegos</span><span>9.2 / 10</span></div>
+            <div class="nano-score-track"><div class="nano-score-fill" style="width: 92%"></div></div>
+          </div>
+          <div class="nano-score-wrap">
+            <div class="nano-score-label"><span>Facilidad de Instalación</span><span>8.5 / 10</span></div>
+            <div class="nano-score-track"><div class="nano-score-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="nano-score-wrap">
+            <div class="nano-score-label"><span>Calidad / Precio</span><span>8.2 / 10</span></div>
+            <div class="nano-score-track"><div class="nano-score-fill" style="width: 82%"></div></div>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 3px; margin-bottom: 0.4rem;">PUNTAJE REVIEWGAMER</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 700; background: var(--nano-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 20px var(--nano-glow-pink));">9.0<span style="font-size: 1.5rem; opacity: 0.4">/10</span></div>
+          </div>
+        </div>
+
+        <!-- ===== PROS Y CONTRAS ===== -->
+        <div class="nano-section-title">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="nano-verdict">
+          <div class="nano-verdict-box nano-verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>El nivel de brillo y la pureza de los colores son inigualables</li>
+              <li>La libertad creativa para formar tu propio diseño</li>
+              <li>El Screen Mirroring desde PC es un game changer para la inmersión</li>
+              <li>La reactividad táctil añade un componente divertido y único</li>
+              <li>Instalación con adhesivos muy potentes (sin taladrar)</li>
+            </ul>
+          </div>
+          <div class="nano-verdict-box nano-verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>El precio inicial es una inversión considerable</li>
+              <li>Solo soportan redes WiFi de 2.4GHz (configuración inicial puede ser tediosa)</li>
+              <li>Los adhesivos son tan fuertes que pueden dañar la pintura si los retiras bruscamente</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== RESEÑAS ===== -->
+        <div class="nano-section-title">
+          <h2>💬 RESEÑAS DE USUARIOS AMAZON</h2>
+        </div>
+        <div style="margin-bottom: 2.5rem;">
+          <div class="nano-review-card">
+            <div class="nano-review-stars">★★★★★</div>
+            <p class="review-text">"Compré el kit de 13 para poner encima de mi escritorio de streaming y el resultado es brutal. La cámara capta muy bien los colores y la app tiene miles de escenas descargables creadas por la comunidad. Valen cada centavo si te gusta el RGB."</p>
+            <div class="reviewer-name">— Steven R. ✅ Compra Verificada</div>
+          </div>
+          <div class="nano-review-card">
+            <div class="nano-review-stars">★★★★☆</div>
+            <p class="review-text">"La integración con Razer Chroma es lo que me vendió el producto. Todos mis periféricos y la pared se sincronizan. Le quito una estrella porque me costó un rato conectarlos a mi router dual-band, tuve que forzar la banda de 2.4GHz."</p>
+            <div class="reviewer-name">— Alex M. ✅ Compra Verificada</div>
+          </div>
+          <div class="nano-review-card">
+            <div class="nano-review-stars">★★★★★</div>
+            <p class="review-text">"Hermosos y muy brillantes. El adhesivo que incluyen es 3M y pega rapidísimo, te recomiendo probar tu diseño en el suelo o en una mesa antes de pegarlos a la pared porque una vez que pegan, no se mueven."</p>
+            <div class="reviewer-name">— Jessica K. ✅ Compra Verificada</div>
+          </div>
+        </div>
+
+        <!-- ===== CTA FINAL ===== -->
+        <div class="nano-cta">
+          <h3>💡 Sé el arquitecto de tu propia iluminación</h3>
+          <p>Consigue el Nanoleaf Shapes Hexagons Smarter Kit de 13 paneles en Amazon</p>
+          <a href="https://www.amazon.com/-/es/Nanoleaf-Hexágonos-formas-13-paneles/dp/B09B2XJWCY" target="_blank" rel="noopener noreferrer" class="btn-amazon-nano">
+            🛒 Ver precio en Amazon
+          </a>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#lifestyle">← Volver a Lifestyle & Setup</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
