@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>Elgato Stream Deck MK.2 | ReviewGamer</title>
+  <meta name="description" content="Análisis del Elgato Stream Deck MK.2. Controlador de producción para streamers y creadores de contenido con 15 teclas LCD personalizables.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --elgato-blue: #007DFF;
+      --elgato-dark: #0A0A0A;
+      --elgato-gray: #1E1E1E;
+      --elgato-gradient: linear-gradient(135deg, #007DFF, #0056b3);
+      --elgato-glow: rgba(0, 125, 255, 0.4);
+    }
+
+    /* ===== HERO ===== */
+    .elg-hero {
+      background: linear-gradient(135deg, #050505 0%, #111 40%, #050505 100%);
+      border-bottom: 2px solid var(--elgato-blue);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .elg-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(0,125,255,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .elg-hero-badge {
+      display: inline-block;
+      background: var(--elgato-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px var(--elgato-glow);
+    }
+    .elg-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff 0%, var(--elgato-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.6rem;
+      line-height: 1.15;
+    }
+    .elg-hero-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA ===== */
+    .elg-img-main {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(0,125,255,0.25);
+      background: linear-gradient(145deg, #111, #050505);
+      position: relative;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .elg-img-main img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .elg-img-main:hover img {
+      transform: scale(1.02);
+    }
+    .elg-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 1.5rem 1rem 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    /* ===== PRECIO ===== */
+    .elg-price-section {
+      background: linear-gradient(135deg, rgba(0,125,255,0.1), rgba(30,30,30,0.5));
+      border: 1px solid rgba(0,125,255,0.3);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .elg-price-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+    .elg-price-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .elg-price-right {
+      text-align: right;
+    }
+    .elg-price-old {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .elg-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--elgato-blue);
+      text-shadow: 0 0 25px var(--elgato-glow);
+    }
+    .elg-price-discount {
+      display: inline-block;
+      background: var(--elgato-gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FEATURES ===== */
+    .elg-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .elg-feature-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .elg-feature-card:hover {
+      border-color: rgba(0,125,255,0.4);
+      background: rgba(0,125,255,0.04);
+      transform: translateY(-3px);
+    }
+    .elg-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .elg-feature-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: #fff;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .elg-feature-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ===== SPECS ===== */
+    .elg-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .elg-specs-header {
+      background: linear-gradient(90deg, rgba(0,125,255,0.2), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: #fff;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .elg-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .elg-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .elg-specs tr:last-child { border-bottom: none; }
+    .elg-specs tr:hover { background: rgba(0,125,255,0.04); }
+    .elg-specs th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      width: 42%;
+    }
+    .elg-specs td {
+      padding: 0.75rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* ===== CTA AMAZON ===== */
+    .elg-cta {
+      background: linear-gradient(135deg, #111, #050505);
+      border: 1.5px solid rgba(0,125,255,0.3);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .elg-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 60% at 50% 100%, rgba(0,125,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .elg-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .elg-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .btn-amazon-elg {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--elgato-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--elgato-glow), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .btn-amazon-elg:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--elgato-glow), 0 0 30px rgba(0,125,255,0.5), 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+
+    /* ===== SCORES ===== */
+    .elg-score-wrap { margin-bottom: 0.9rem; }
+    .elg-score-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.3rem;
+    }
+    .elg-score-label span:last-child { color: #fff; font-weight: 600; }
+    .elg-score-track {
+      height: 6px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    .elg-score-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: var(--elgato-gradient);
+      transition: width 1.2s ease;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .elg-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .elg-section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .elg-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,125,255,0.3), transparent);
+    }
+
+    /* ===== PRO / CON ===== */
+    .elg-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .elg-verdict-box {
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+    }
+    .elg-verdict-pro {
+      background: rgba(0,125,255,0.05);
+      border: 1px solid rgba(0,125,255,0.2);
+    }
+    .elg-verdict-con {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .elg-verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .elg-verdict-pro h4 { color: var(--elgato-blue); }
+    .elg-verdict-con h4 { color: #aaa; }
+    .elg-verdict-box ul { list-style: none; padding: 0; margin: 0; }
+    .elg-verdict-box ul li {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .elg-verdict-pro ul li::before { content: '✓'; color: var(--elgato-blue); font-weight: 700; flex-shrink: 0; }
+    .elg-verdict-con ul li::before { content: '✗'; color: #888; font-weight: 700; flex-shrink: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .elg-features { grid-template-columns: repeat(2, 1fr); }
+      .elg-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .elg-hero h1 { font-size: 1.5rem; }
+      .elg-features { grid-template-columns: 1fr; }
+      .elg-price-section { flex-direction: column; align-items: flex-start; }
+      .elg-price-right { text-align: left; }
+      .elg-price-tag { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#productividad">Productividad & Audio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="elg-hero">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="elg-hero-badge">🎙️ Herramienta de Creadores</div>
+      <h1>Elgato Stream Deck MK.2</h1>
+      <p class="elg-hero-sub">Control absoluto en la punta de tus dedos. 15 teclas LCD totalmente personalizables para disparar acciones, cambiar escenas y manejar tu stream como un profesional.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 1000px;">
+
+        <!-- ===== IMAGEN PRINCIPAL ===== -->
+        <div class="elg-img-main">
+          <img src="assets/elgato-deck-main.png" alt="Elgato Stream Deck MK.2 en setup de streaming">
+          <div class="elg-img-label">El centro de control de tu setup</div>
+        </div>
+
+        <!-- ===== PRECIO ===== -->
+        <div class="elg-price-section">
+          <div class="elg-price-left">
+            <h2 class="elg-price-name">Elgato Stream Deck MK.2</h2>
+            <p class="elg-price-subtitle">15 Teclas LCD Macro · Carátulas Intercambiables · Soporte Inclinado</p>
+          </div>
+          <div class="elg-price-right">
+            <div class="elg-price-old">$149.99 USD</div>
+            <div class="elg-price-tag">$139.99</div>
+            <div class="elg-price-discount">7% OFF</div>
+          </div>
+        </div>
+
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <div style="margin-bottom: 2.5rem;">
+          <p style="color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.8;">
+            El <strong style="color:#fff;">Stream Deck MK.2</strong> es más que una botonera para streamers. Es un mezclador de producción completo. Con un software potente respaldado por Corsair, te permite automatizar tareas complejas, abrir programas, controlar OBS, Spotify, Discord, luces hue y más, todo con un solo toque visualmente claro en sus teclas LCD.
+          </p>
+        </div>
+
+        <!-- ===== CARACTERÍSTICAS ===== -->
+        <div class="elg-section-title">
+          <h2>⚡ FUNCIONES CLAVE</h2>
+        </div>
+        <div class="elg-features">
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">⌨️</span>
+            <h4>15 Teclas LCD</h4>
+            <p>Botones de alta resolución donde cada uno actúa como una pantalla miniatura para iconos GIF o estáticos.</p>
+          </div>
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">🔌</span>
+            <h4>Cable USB-C Desmontable</h4>
+            <p>La versión MK.2 mejora con un cable tipo C extraíble para facilitar su transporte y reemplazo.</p>
+          </div>
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">🎨</span>
+            <h4>Faceplates Custom</h4>
+            <p>Cambia el aspecto de tu Stream Deck quitando la carátula frontal e instalando diseños personalizados.</p>
+          </div>
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">⚙️</span>
+            <h4>Software Potente</h4>
+            <p>Arrastra y suelta acciones en la aplicación. Crea perfiles inteligentes que cambian según el programa activo.</p>
+          </div>
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">🛒</span>
+            <h4>Plugin Store</h4>
+            <p>Descarga cientos de plugins gratuitos creados por la comunidad para controlar casi cualquier aplicación de PC.</p>
+          </div>
+          <div class="elg-feature-card">
+            <span class="elg-feature-icon">🚀</span>
+            <h4>Multi-Acciones</h4>
+            <p>Configura un solo botón para encender luces, tuitear que estás en vivo, abrir OBS y lanzar un juego.</p>
+          </div>
+        </div>
+
+        <!-- ===== BOTÓN AMAZON ===== -->
+        <div class="elg-cta">
+          <h3>🛒 Simplifica tu flujo de trabajo</h3>
+          <p>Potencia tu productividad y streaming con el Stream Deck MK.2</p>
+          <a href="https://www.amazon.com/-/es/Elgato-mezclador-producción-controlador-personalizables/dp/B0BJL8SJ59" target="_blank" rel="noopener noreferrer" class="btn-amazon-elg">
+            🛒 Comprar en Amazon
+          </a>
+        </div>
+
+        <!-- ===== ESPECIFICACIONES ===== -->
+        <div class="elg-section-title">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="elg-specs">
+          <div class="elg-specs-header">FICHA TÉCNICA STREAM DECK MK.2</div>
+          <table>
+            <tr>
+              <th scope="row">Dimensiones</th>
+              <td>118 x 84 x 25 mm (sin soporte)</td>
+            </tr>
+            <tr>
+              <th scope="row">Peso</th>
+              <td>145 g (sin soporte) / 270 g (con soporte)</td>
+            </tr>
+            <tr>
+              <th scope="row">Teclas</th>
+              <td>15 teclas LCD personalizables</td>
+            </tr>
+            <tr>
+              <th scope="row">Interfaz</th>
+              <td>USB 2.0 (Cable USB-C desmontable incluido)</td>
+            </tr>
+            <tr>
+              <th scope="row">Compatibilidad SO</th>
+              <td>Windows 10/11 (64-bit), macOS 10.15 o posterior</td>
+            </tr>
+            <tr>
+              <th scope="row">Soporte</th>
+              <td>Ángulo fijo de 45° (extraíble)</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ===== PUNTUACIONES ===== -->
+        <div class="elg-section-title">
+          <h2>📊 PUNTUACIONES</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 1.8rem; margin-bottom: 2.5rem;">
+          <div class="elg-score-wrap">
+            <div class="elg-score-label"><span>Calidad de las Teclas LCD</span><span>9.5 / 10</span></div>
+            <div class="elg-score-track"><div class="elg-score-fill" style="width: 95%"></div></div>
+          </div>
+          <div class="elg-score-wrap">
+            <div class="elg-score-label"><span>Software y Ecosistema</span><span>10 / 10</span></div>
+            <div class="elg-score-track"><div class="elg-score-fill" style="width: 100%"></div></div>
+          </div>
+          <div class="elg-score-wrap">
+            <div class="elg-score-label"><span>Construcción y Diseño</span><span>9.0 / 10</span></div>
+            <div class="elg-score-track"><div class="elg-score-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="elg-score-wrap">
+            <div class="elg-score-label"><span>Facilidad de Uso</span><span>9.8 / 10</span></div>
+            <div class="elg-score-track"><div class="elg-score-fill" style="width: 98%"></div></div>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 3px; margin-bottom: 0.4rem;">PUNTAJE REVIEWGAMER</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 700; background: var(--elgato-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 20px rgba(0,125,255,0.5));">9.6<span style="font-size: 1.5rem; opacity: 0.4">/10</span></div>
+          </div>
+        </div>
+
+        <!-- ===== PROS Y CONTRAS ===== -->
+        <div class="elg-section-title">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="elg-verdict">
+          <div class="elg-verdict-box elg-verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>El ecosistema de plugins gratuitos es masivo y crece a diario</li>
+              <li>El cable USB-C extraíble soluciona el mayor defecto de la MK.1</li>
+              <li>Programar Multi-Acciones ahorra horas de clicks repetitivos</li>
+              <li>Excelente para edición de video (Premiere, DaVinci), no solo para Twitch</li>
+            </ul>
+          </div>
+          <div class="elg-verdict-box elg-verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>El soporte incluido tiene un ángulo fijo (no es ajustable como la MK.1)</li>
+              <li>Es un producto costoso para usuarios casuales</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== CTA FINAL ===== -->
+        <div class="elg-cta">
+          <h3>💡 Toma el control de tu estudio</h3>
+          <p>Encuentra el Elgato Stream Deck MK.2 en Amazon con envío rápido</p>
+          <a href="https://www.amazon.com/-/es/Elgato-mezclador-producción-controlador-personalizables/dp/B0BJL8SJ59" target="_blank" rel="noopener noreferrer" class="btn-amazon-elg">
+            🛒 Ver disponibilidad en Amazon
+          </a>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#productividad">← Volver a Productividad & Audio</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
