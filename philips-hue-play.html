@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ReviewGamer Team">
+  <title>Philips Hue Play Light Bar | ReviewGamer</title>
+  <meta name="description" content="Análisis de las Philips Hue Play Light Bar. Iluminación inteligente de gama alta, sincronización con PC/TV y control por voz (Alexa, Google, Siri).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <style>
+    :root {
+      --hue-blue: #0078D7;
+      --hue-pink: #E81123;
+      --hue-purple: #B146C2;
+      --hue-gradient: linear-gradient(135deg, #0078D7, #B146C2, #E81123);
+      --hue-glow-purple: rgba(177, 70, 194, 0.4);
+      --hue-glow-blue: rgba(0, 120, 215, 0.4);
+    }
+
+    /* ===== HERO ===== */
+    .hue-hero {
+      background: linear-gradient(135deg, #0a0a0f 0%, #150a20 40%, #0a0a0f 100%);
+      border-bottom: 2px solid var(--hue-purple);
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hue-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 25% 50%, rgba(0,120,215,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 75% 50%, rgba(232,17,35,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hue-hero-badge {
+      display: inline-block;
+      background: var(--hue-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px var(--hue-glow-purple);
+    }
+    .hue-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff 0%, var(--hue-purple) 50%, var(--hue-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0.3rem 0 0.6rem;
+      line-height: 1.15;
+    }
+    .hue-hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== GALERÍA ===== */
+    .hue-gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .hue-img-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(177,70,194,0.25);
+      background: linear-gradient(145deg, #150a20, #0a0a0f);
+      position: relative;
+      cursor: zoom-in;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .hue-img-card:hover {
+      border-color: var(--hue-purple);
+      transform: scale(1.015);
+    }
+    .hue-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .hue-img-card:hover img {
+      transform: scale(1.04);
+    }
+    .hue-img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem 1rem 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    /* ===== PRECIO ===== */
+    .hue-price-section {
+      background: linear-gradient(135deg, rgba(0,120,215,0.08), rgba(177,70,194,0.08));
+      border: 1px solid rgba(177,70,194,0.25);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hue-price-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem;
+    }
+    .hue-price-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .hue-price-right {
+      text-align: right;
+    }
+    .hue-price-old {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.3);
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .hue-price-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--hue-purple);
+      text-shadow: 0 0 25px var(--hue-glow-purple);
+    }
+    .hue-price-discount {
+      display: inline-block;
+      background: var(--hue-gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FEATURES ===== */
+    .hue-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .hue-feature-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    }
+    .hue-feature-card:hover {
+      border-color: rgba(177,70,194,0.4);
+      background: rgba(177,70,194,0.04);
+      transform: translateY(-3px);
+    }
+    .hue-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .hue-feature-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: #fff;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.5px;
+    }
+    .hue-feature-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ===== SPECS ===== */
+    .hue-specs {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .hue-specs-header {
+      background: linear-gradient(90deg, rgba(177,70,194,0.18), rgba(0,120,215,0.1), transparent);
+      padding: 1rem 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: #fff;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hue-specs table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .hue-specs tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .hue-specs tr:last-child { border-bottom: none; }
+    .hue-specs tr:hover { background: rgba(177,70,194,0.04); }
+    .hue-specs th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      width: 42%;
+    }
+    .hue-specs td {
+      padding: 0.75rem 1.5rem;
+      text-align: right;
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    /* ===== CTA AMAZON ===== */
+    .hue-cta {
+      background: linear-gradient(135deg, #150a20, #0a0a0f);
+      border: 1.5px solid rgba(177,70,194,0.35);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    .hue-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 60% at 30% 100%, rgba(0,120,215,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 70% 100%, rgba(177,70,194,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hue-cta h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      position: relative;
+    }
+    .hue-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .btn-amazon-hue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--hue-gradient);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--hue-glow-purple), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .btn-amazon-hue:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px var(--hue-glow-purple), 0 0 30px var(--hue-glow-blue), 0 8px 30px rgba(0,0,0,0.5);
+      color: #fff;
+    }
+    .hue-trust {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .hue-trust span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .hue-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .hue-section-title h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+    .hue-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(177,70,194,0.3), transparent);
+    }
+
+    /* ===== PRO / CON ===== */
+    .hue-verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .hue-verdict-box {
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+    }
+    .hue-verdict-pro {
+      background: rgba(177,70,194,0.05);
+      border: 1px solid rgba(177,70,194,0.2);
+    }
+    .hue-verdict-con {
+      background: rgba(232,17,35,0.05);
+      border: 1px solid rgba(232,17,35,0.2);
+    }
+    .hue-verdict-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      margin: 0 0 0.8rem;
+    }
+    .hue-verdict-pro h4 { color: #fff; }
+    .hue-verdict-con h4 { color: var(--hue-pink); }
+    .hue-verdict-box ul { list-style: none; padding: 0; margin: 0; }
+    .hue-verdict-box ul li {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+    .hue-verdict-pro ul li::before { content: '✓'; color: var(--hue-purple); font-weight: 700; flex-shrink: 0; }
+    .hue-verdict-con ul li::before { content: '✗'; color: var(--hue-pink); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hue-gallery-grid { grid-template-columns: 1fr; }
+      .hue-features { grid-template-columns: repeat(2, 1fr); }
+      .hue-verdict { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hue-hero h1 { font-size: 1.5rem; }
+      .hue-features { grid-template-columns: 1fr; }
+      .hue-price-section { flex-direction: column; align-items: flex-start; }
+      .hue-price-right { text-align: left; }
+      .hue-price-tag { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#inicio">ReviewGamer</a>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#lifestyle">Lifestyle & Setup</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="hue-hero">
+    <div class="container">
+      <div class="hue-hero-badge">✨ Iluminación Premium · Ecosistema Hue</div>
+      <h1>Philips Hue Play<br>Light Bar</h1>
+      <p class="hue-hero-sub">La iluminación más avanzada para tu gaming setup. Sincroniza luces reales con el contenido de tu pantalla en tiempo real.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: 1100px;">
+
+        <!-- ===== GALERÍA ===== -->
+        <div class="hue-gallery-grid">
+          <div class="hue-img-card">
+            <img src="assets/philips-hue-setup.png" alt="Philips Hue Play en setup gamer sincronizando colores">
+            <div class="hue-img-label">Sincronización de pantalla inmersiva</div>
+          </div>
+          <div class="hue-img-card">
+            <img src="assets/philips-hue-main.png" alt="Philips Hue Play barra individual diseño elegante">
+            <div class="hue-img-label">Diseño elegante de sobremesa</div>
+          </div>
+        </div>
+
+        <!-- ===== PRECIO ===== -->
+        <div class="hue-price-section">
+          <div class="hue-price-left">
+            <h2 class="hue-price-name">Philips Hue Play Light Bar (2-Pack)</h2>
+            <p class="hue-price-subtitle">Kit Base 2 Barras · Compatible con Alexa, Google y HomeKit</p>
+          </div>
+          <div class="hue-price-right">
+            <div class="hue-price-old">$159.99 USD</div>
+            <div class="hue-price-tag">$129.99</div>
+            <div class="hue-price-discount">19% OFF</div>
+          </div>
+        </div>
+
+        <!-- ===== DESCRIPCIÓN ===== -->
+        <div style="margin-bottom: 2.5rem;">
+          <p style="color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.8;">
+            El <strong style="color:#fff;">Philips Hue Play</strong> es el estándar de oro para la iluminación gamer premium. Su capacidad para <strong style="color: var(--hue-purple);">sincronizarse en tiempo real</strong> con lo que pasa en tu monitor, ya sea en un juego intenso o viendo una película, ofrece una experiencia inmersiva que barras más económicas simplemente no pueden igualar. Combínalo con la app Hue Sync para transformar tu habitación.
+          </p>
+        </div>
+
+        <!-- ===== CARACTERÍSTICAS ===== -->
+        <div class="hue-section-title">
+          <h2>⚡ CARACTERÍSTICAS PREMIUM</h2>
+        </div>
+        <div class="hue-features">
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">🖥️</span>
+            <h4>Sincronización Exacta</h4>
+            <p>Sincroniza los colores de tu monitor con las luces usando Hue Sync</p>
+          </div>
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">🎙️</span>
+            <h4>Control por Voz</h4>
+            <p>Compatible con Amazon Alexa, Google Assistant y Apple HomeKit</p>
+          </div>
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">✨</span>
+            <h4>16 Millones de Colores</h4>
+            <p>Precisión de color insuperable e iluminación blanca cálida a fría</p>
+          </div>
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">🔗</span>
+            <h4>Ecosistema Hue</h4>
+            <p>Añade hasta 3 barras a la misma fuente de poder (expandible)</p>
+          </div>
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">📺</span>
+            <h4>Montaje Versátil</h4>
+            <p>Ponlo en la mesa, escóndelo detrás de tu monitor o atorníllalo a la TV</p>
+          </div>
+          <div class="hue-feature-card">
+            <span class="hue-feature-icon">🛡️</span>
+            <h4>Calidad Premium</h4>
+            <p>Construcción duradera de policarbonato mate que disipa bien el calor</p>
+          </div>
+        </div>
+
+        <!-- ===== BOTÓN AMAZON ===== -->
+        <div class="hue-cta">
+          <h3>🛒 Mejora la inmersión de tus juegos hoy</h3>
+          <p>Producto disponible en Amazon con envío Prime garantizado</p>
+          <a href="https://www.amazon.com/-/es/Philips-Hue-Inteligente-Retroiluminación-Sincronizada/dp/B08P2D215V" target="_blank" rel="noopener noreferrer" class="btn-amazon-hue">
+            🛒 Comprar en Amazon
+          </a>
+          <div class="hue-trust">
+            <span>🚚 Envío Prime disponible</span>
+            <span>🔒 Garantía Oficial Philips</span>
+            <span>⭐ Miles de reseñas positivas</span>
+          </div>
+        </div>
+
+        <!-- ===== ESPECIFICACIONES ===== -->
+        <div class="hue-section-title">
+          <h2>⚙️ ESPECIFICACIONES TÉCNICAS</h2>
+        </div>
+        <div class="hue-specs">
+          <div class="hue-specs-header">FICHA TÉCNICA PHILIPS HUE PLAY</div>
+          <table>
+            <tr>
+              <th scope="row">Producto</th>
+              <td>Philips Hue Play Light Bar (2-Pack Base Kit)</td>
+            </tr>
+            <tr>
+              <th scope="row">Potencia (W)</th>
+              <td>6.6 W (cada barra)</td>
+            </tr>
+            <tr>
+              <th scope="row">Brillo</th>
+              <td>Hasta 530 lúmenes por barra</td>
+            </tr>
+            <tr>
+              <th scope="row">Conectividad</th>
+              <td>Requiere Philips Hue Bridge (se vende por separado)</td>
+            </tr>
+            <tr>
+              <th scope="row">Compatibilidad Asistentes</th>
+              <td>Alexa, Google Assistant, Apple HomeKit, Cortana</td>
+            </tr>
+            <tr>
+              <th scope="row">Sincronización PC/Mac</th>
+              <td>Sí, mediante app Hue Sync (Gratis)</td>
+            </tr>
+            <tr>
+              <th scope="row">Dimensiones</th>
+              <td>25.3 x 4.4 x 3.6 cm</td>
+            </tr>
+            <tr>
+              <th scope="row">Vida útil estimada</th>
+              <td>25,000 horas</td>
+            </tr>
+            <tr>
+              <th scope="row">Fuente de alimentación</th>
+              <td>Adaptador de corriente para hasta 3 barras</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- ===== PROS Y CONTRAS ===== -->
+        <div class="hue-section-title">
+          <h2>✅ LO MEJOR Y LO PEOR</h2>
+        </div>
+        <div class="hue-verdict">
+          <div class="hue-verdict-box hue-verdict-pro">
+            <h4>✅ LO QUE NOS ENCANTÓ</h4>
+            <ul>
+              <li>La mejor precisión de color del mercado en iluminación inteligente</li>
+              <li>Sincronización increíblemente rápida con la acción en pantalla (PC/Mac)</li>
+              <li>Fácil de montar detrás de monitores con el adhesivo incluido</li>
+              <li>Control por voz impecable con todos los ecosistemas</li>
+              <li>Puedes conectar hasta 3 barras en un solo enchufe de corriente</li>
+            </ul>
+          </div>
+          <div class="hue-verdict-box hue-verdict-con">
+            <h4>❌ A MEJORAR</h4>
+            <ul>
+              <li>Requiere el Hue Bridge para funcionar correctamente (gasto extra)</li>
+              <li>Para sincronizar con consolas/TV necesitas el costoso Hue Sync Box</li>
+              <li>Precio elevado en comparación a la competencia básica</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ===== CTA FINAL ===== -->
+        <div class="hue-cta">
+          <h3>💡 El toque final para un setup impecable</h3>
+          <p>Adquiere el kit base de Philips Hue Play y descubre la iluminación inteligente real</p>
+          <a href="https://www.amazon.com/-/es/Philips-Hue-Inteligente-Retroiluminación-Sincronizada/dp/B08P2D215V" target="_blank" rel="noopener noreferrer" class="btn-amazon-hue">
+            🛒 Ver precio en Amazon
+          </a>
+        </div>
+
+        <!-- VOLVER -->
+        <p style="text-align: center; margin-bottom: 3rem;">
+          <a class="btn btn-ghost" href="index.html#lifestyle">← Volver a Lifestyle & Setup</a>
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-3">
+    <div class="container footer-wrap">
+      <p>© 2026 ReviewGamer. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
